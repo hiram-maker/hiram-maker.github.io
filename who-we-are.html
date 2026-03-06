@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Who We Are | Your CDMO Name</title>
+    <title>Team | Flurry Powders</title>
 
     <style>
+        :root {
+            --orange: #D96A00;
+            --grey-light: #F2F2F2;
+            --black: #000000;
+            --white: #FFFFFF;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f5f5f5;
+            background: var(--grey-light);
         }
 
         /* Sticky Header */
@@ -24,40 +31,45 @@
             justify-content: space-between;
             align-items: center;
             padding: 0.75rem 1.5rem;
-            background: #003366;
-            color: white;
+            background: var(--orange);
+            color: var(--white);
         }
 
         .logo {
             font-weight: bold;
             text-decoration: none;
-            color: white;
+            color: var(--white);
             font-size: 1.2rem;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 1.5rem;
+            gap: 1.2rem;
             margin: 0;
             padding: 0;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: white;
+            color: var(--white);
             font-weight: bold;
         }
 
-        .nav-links a:hover {
-            text-decoration: underline;
+        @media (max-width: 600px) {
+            .nav-bar { padding: 0.5rem 1rem; }
+            .nav-links { gap: 0.8rem; }
+            .nav-links a { font-size: 0.9rem; }
+            .logo { font-size: 1rem; }
         }
 
-        /* Page Sections */
         .section {
             padding: 40px 20px;
             max-width: 900px;
             margin: auto;
+            background: var(--white);
+            margin-top: 20px;
+            border-radius: 8px;
         }
 
         /* Team Grid */
@@ -78,41 +90,21 @@
             height: 160px;
             object-fit: cover;
             border-radius: 50%;
-            border: 3px solid #003366;
+            border: 3px solid var(--orange);
         }
 
-        .team-member h3 {
-            margin-top: 15px;
-            margin-bottom: 5px;
-        }
-
-        .team-member p {
-            margin: 0;
-            color: #444;
-        }
-
-        /* Medium screens (tablets) */
         @media (max-width: 900px) {
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
-        /* Small screens (phones) */
         @media (max-width: 600px) {
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .team-member img {
-                width: 200px;
-                height: 200px;
-            }
+            .team-grid { grid-template-columns: 1fr; }
+            .team-member img { width: 200px; height: 200px; }
         }
 
         footer {
-            background: #003366;
-            color: white;
+            background: var(--orange);
+            color: var(--white);
             text-align: center;
             padding: 20px;
             margin-top: 40px;
@@ -122,53 +114,50 @@
 
 <body>
 
-    <!-- Sticky Navigation -->
-    <header class="site-header">
-        <nav class="nav-bar">
-            <a href="index.html" class="logo">Your CDMO Name</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="technology.html">Technology</a></li>
-                <li><a href="who-we-are.html">Who We Are</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header class="site-header">
+    <nav class="nav-bar">
+        <a href="index.html" class="logo">Flurry Powders</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="technology.html">Tech</a></li>
+            <li><a href="who-we-are.html">Team</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Main Content -->
-    <section class="section">
-        <h2>Who We Are</h2>
-        <p>
-            We are a team of scientists, engineers, and innovators dedicated to advancing pharmaceutical development 
-            through precision powder technologies, formulation expertise, and a commitment to quality.
-        </p>
+<section class="section">
+    <h2>Our Team</h2>
+    <p>
+        Flurry Powders is built by scientists, engineers, and innovators dedicated to advancing pharmaceutical development.
+    </p>
 
-        <div class="team-grid">
+    <div class="team-grid">
 
-            <div class="team-member">
-                <img src="images/person1.png" alt="Team Member 1">
-                <h3>Person One</h3>
-                <p>Title / Role</p>
-            </div>
-
-            <div class="team-member">
-                <img src="images/person2.png" alt="Team Member 2">
-                <h3>Person Two</h3>
-                <p>Title / Role</p>
-            </div>
-
-            <div class="team-member">
-                <img src="images/person3.png" alt="Team Member 3">
-                <h3>Person Three</h3>
-                <p>Title / Role</p>
-            </div>
-
+        <div class="team-member">
+            <img src="images/person1.png" alt="Team Member 1">
+            <h3>Person One</h3>
+            <p>Title / Role</p>
         </div>
-    </section>
 
-    <footer>
-        <p>© 2026 Your CDMO Name — All Rights Reserved</p>
-    </footer>
+        <div class="team-member">
+            <img src="images/person2.png" alt="Team Member 2">
+            <h3>Person Two</h3>
+            <p>Title / Role</p>
+        </div>
+
+        <div class="team-member">
+            <img src="images/person3.png" alt="Team Member 3">
+            <h3>Person Three</h3>
+            <p>Title / Role</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Flurry Powders — All Rights Reserved</p>
+</footer>
 
 </body>
 </html>

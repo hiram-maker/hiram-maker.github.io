@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your CDMO Name</title>
+    <title>Flurry Powders</title>
 
     <style>
+        /* Brand Colors */
+        :root {
+            --orange: #D96A00;
+            --grey-light: #F2F2F2;
+            --black: #000000;
+            --white: #FFFFFF;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f5f5f5;
+            background: var(--grey-light);
         }
 
         /* Sticky Header */
@@ -24,33 +32,52 @@
             justify-content: space-between;
             align-items: center;
             padding: 0.75rem 1.5rem;
-            background: #003366;
-            color: white;
+            background: var(--orange);
+            color: var(--white);
         }
 
         .logo {
             font-weight: bold;
             text-decoration: none;
-            color: white;
+            color: var(--white);
             font-size: 1.2rem;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 1.5rem;
+            gap: 1.2rem;
             margin: 0;
             padding: 0;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: white;
+            color: var(--white);
             font-weight: bold;
         }
 
         .nav-links a:hover {
-            text-decoration: underline;
+            opacity: 0.8;
+        }
+
+        /* Mobile Cleanup */
+        @media (max-width: 600px) {
+            .nav-bar {
+                padding: 0.5rem 1rem;
+            }
+
+            .nav-links {
+                gap: 0.8rem;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+            }
+
+            .logo {
+                font-size: 1rem;
+            }
         }
 
         /* Page Sections */
@@ -58,11 +85,14 @@
             padding: 40px 20px;
             max-width: 900px;
             margin: auto;
+            background: var(--white);
+            margin-top: 20px;
+            border-radius: 8px;
         }
 
         footer {
-            background: #003366;
-            color: white;
+            background: var(--orange);
+            color: var(--white);
             text-align: center;
             padding: 20px;
             margin-top: 40px;
@@ -75,11 +105,11 @@
     <!-- Sticky Navigation -->
     <header class="site-header">
         <nav class="nav-bar">
-            <a href="index.html" class="logo">Your CDMO Name</a>
+            <a href="index.html" class="logo">Flurry Powders</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="technology.html">Technology</a></li>
-                <li><a href="who-we-are.html">Who We Are</a></li>
+                <li><a href="technology.html">Tech</a></li>
+                <li><a href="who-we-are.html">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -87,29 +117,38 @@
 
     <!-- Main Sections -->
     <section id="home" class="section">
-        <h2>Home</h2>
-        <p>Welcome to our CDMO. We support pharma and biotech partners with development and manufacturing solutions.</p>
+        <h2>Welcome to Flurry Powders</h2>
+        <p>
+            Flurry Powders is a CDMO specializing in precision powder technologies, formulation development, 
+            and advanced manufacturing solutions for pharmaceutical and biotech partners.
+        </p>
     </section>
 
     <section id="technology" class="section">
-        <h2>Technology</h2>
-        <p>Describe your equipment, analytical capabilities, cleanrooms, formulation tools, etc.</p>
+        <h2>Technology Overview</h2>
+        <p>
+            Explore our capabilities, equipment, analytical methods, and scientific posters on the Technology page.
+        </p>
+        <p><a href="technology.html">Visit Technology →</a></p>
     </section>
 
     <section id="who" class="section">
-        <h2>Who We Are</h2>
-        <p>Introduce your team, mission, values, and experience.</p>
+        <h2>Our Team</h2>
+        <p>
+            Meet the scientists and engineers behind Flurry Powders.
+        </p>
+        <p><a href="who-we-are.html">Visit Team Page →</a></p>
     </section>
 
     <section id="contact" class="section">
         <h2>Contact Us</h2>
-        <p>Email: info@yourcdmo.com</p>
+        <p>Email: info@flurrypowders.com</p>
         <p>Phone: (555) 123‑4567</p>
         <p>Location: Your City, State</p>
     </section>
 
     <footer>
-        <p>© 2026 Your CDMO Name — All Rights Reserved</p>
+        <p>© 2026 Flurry Powders — All Rights Reserved</p>
     </footer>
 
 </body>

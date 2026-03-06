@@ -70,6 +70,7 @@
 
         .team-member {
             text-align: center;
+            padding: 10px;
         }
 
         .team-member img {
@@ -88,6 +89,25 @@
         .team-member p {
             margin: 0;
             color: #444;
+        }
+
+        /* Medium screens (tablets) */
+        @media (max-width: 900px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Small screens (phones) */
+        @media (max-width: 600px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-member img {
+                width: 200px;
+                height: 200px;
+            }
         }
 
         footer {

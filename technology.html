@@ -60,6 +60,56 @@
             margin: auto;
         }
 
+        /* Poster Grid */
+        .poster-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .poster-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .poster-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 2px solid #003366;
+        }
+
+        .poster-item h4 {
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .poster-item p {
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        .poster-item a {
+            color: #003366;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .poster-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile-friendly layout */
+        @media (max-width: 800px) {
+            .poster-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         footer {
             background: #003366;
             color: white;
@@ -89,23 +139,50 @@
     <section class="section">
         <h2>Technology</h2>
         <p>
-            This page will serve as a deeper dive into your scientific capabilities, equipment, 
+            This page provides a deeper look into our scientific capabilities, equipment, 
             formulation tools, analytical methods, and technical expertise.
         </p>
 
-        <h3>Poster 1 Title</h3>
-        <p>Short description of poster 1. We will replace this with your real content.</p>
+        <!-- Posters Section -->
+        <h3>Our Technology Posters</h3>
+        <p>These posters provide a quick visual overview of our core technologies and capabilities.</p>
 
-        <h3>Poster 2 Title</h3>
-        <p>Short description of poster 2.</p>
+        <div class="poster-grid">
 
-        <h3>Poster 3 Title</h3>
-        <p>Short description of poster 3.</p>
+            <div class="poster-item">
+                <img src="images/poster1.png" alt="Poster 1">
+                <h4>Poster 1 Title</h4>
+                <p>Short description of poster 1.</p>
+                <a href="pdfs/poster1.pdf" target="_blank">Download PDF</a>
+            </div>
 
-        <h3>Future White Papers</h3>
-        <p>
-            As you publish white papers, they can be added here with download links or summaries.
-        </p>
+            <div class="poster-item">
+                <img src="images/poster2.png" alt="Poster 2">
+                <h4>Poster 2 Title</h4>
+                <p>Short description of poster 2.</p>
+                <a href="pdfs/poster2.pdf" target="_blank">Download PDF</a>
+            </div>
+
+            <div class="poster-item">
+                <img src="images/poster3.png" alt="Poster 3">
+                <h4>Poster 3 Title</h4>
+                <p>Short description of poster 3.</p>
+                <a href="pdfs/poster3.pdf" target="_blank">Download PDF</a>
+            </div>
+
+        </div>
+
+        <!-- PDF Section -->
+        <h3 style="margin-top: 50px;">Technical Documents & Downloads</h3>
+        <p>Below are downloadable PDFs including posters, technical briefs, and future white papers.</p>
+
+        <ul>
+            <li><a href="pdfs/poster1.pdf" target="_blank">Poster 1 – Title Goes Here</a></li>
+            <li><a href="pdfs/poster2.pdf" target="_blank">Poster 2 – Title Goes Here</a></li>
+            <li><a href="pdfs/poster3.pdf" target="_blank">Poster 3 – Title Goes Here</a></li>
+            <li><a href="pdfs/whitepaper1.pdf" target="_blank">White Paper – Title Goes Here</a></li>
+        </ul>
+
     </section>
 
     <footer>

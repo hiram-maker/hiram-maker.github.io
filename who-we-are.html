@@ -1,4 +1,40 @@
+<!-- Header (use your existing one if you already have it) -->
+<header class="site-header">
+  <nav class="nav">
+    <a class="logo" href="/">Your Logo</a>
+    <ul class="nav-links">
+      <li><a href="/about">About</a></li>
+      <li><a href="/team">Team</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
 <style>
+  /* Header baseline styles (minimal, won’t change your brand) */
+  .site-header {
+    position: sticky; /* change to fixed if that's your current pattern */
+    top: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    padding: 12px 20px;
+    margin: 0 auto;
+  }
+  .nav .logo { font-weight: 600; color: #111; text-decoration: none; }
+  .nav-links {
+    display: flex; gap: 18px; list-style: none; margin: 0; padding: 0;
+  }
+  .nav-links a { color: #333; text-decoration: none; }
+  .nav-links a:hover { text-decoration: underline; }
+
+  /* Your team block (exact same look as before) */
   .team-grid {
     display: grid;
     gap: 30px;
@@ -6,6 +42,8 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    /* If your header is fixed, keep this. If sticky, you can remove or reduce it. */
+    padding-top: 64px;
   }
 
   .team-card {
@@ -24,157 +62,92 @@
     background: #ccc;
   }
 
-  details {
-    margin-top: 10px;
-  }
-
-  summary {
-    cursor: pointer;
-    font-weight: bold;
-    color: #0055ff;
-  }
-
-  summary:hover {
-    text-decoration: underline;
-  }
+  details { margin-top: 10px; }
+  summary { cursor: pointer; font-weight: bold; color: #0055ff; }
+  summary:hover { text-decoration: underline; }
 </style>
 
+<!-- Team section -->
 <div class="team-grid">
 
   <!-- PERSON 1 -->
   <div class="team-card">
-    <img class="team-photo" src="person1.png" alt="Andreas Boeckl">
-
+    person1.png
     <h3>Andreas Boeckl</h3>
-
     <details>
       <summary>Read Full Bio</summary>
-
-      <p>
-        Andreas Boeckl is an intuitive problem solver, who excels when confronted with seemingly unsolvable 
-        problems, frequently generating approaches that the rational mind would not think to chase. He has a 
-        pragmatic mindset that is fixated on efficiency – testing hypotheses and validating concepts with 
-        lightweight experiments, prototypes, or thought experiments before committing precious resources.
-      </p>
-
-      <p>
-        Obsessed with spray drying as a means to manipulate the physicochemical properties of materials, 
-        Boeckl founded Flurry Powders in 2010 with the vision of bridging the gap between product ideation and 
-        clinical and commercial manufacturing. Prior to Flurry Powders, Boeckl has held engineering positions in 
-        research and development at Inhale Therapeutic Systems (Nektar Therapeutics), Lockheed Martin's Advanced 
-        Technology Center, and as an independent consultant to industry.
-      </p>
-
-      <p>
-        During his 8 years at Inhale, he invented, designed, tested, and implemented novel spray drying and powder 
-        filling equipment that addressed the challenges presented by ultra-fine, low density, spray dried powders. 
-        Andreas holds a Bachelor’s of Science in Materials Science and Engineering from the University of Florida.
-      </p>
-
+      <p>Andreas Boeckl is an intuitive problem solver, who excels when confronted with seemingly unsolvable
+      problems, frequently generating approaches that the rational mind would not think to chase. He has a pragmatic
+      mindset that is fixated on efficiency – testing hypotheses and validating concepts with lightweight experiments,
+      prototypes, or thought experiments before committing precious resources.</p>
+      <p>Obsessed with spray drying as a means to manipulate the physicochemical properties of materials, Boeckl founded
+      Flurry Powders in 2010 with the vision of bridging the gap between product ideation and clinical and commercial
+      manufacturing. Prior to Flurry Powders, Boeckl has held engineering positions in research and development at Inhale
+      Therapeutic Systems (Nektar Therapeutics), Lockheed Martin's Advanced Technology Center, and as an independent
+      consultant to industry.</p>
+      <p>During his 8 years at Inhale, he invented, designed, tested, and implemented novel spray drying and powder
+      filling equipment that addressed the challenges presented by ultra-fine, low density, spray dried powders.
+      Andreas holds a Bachelor’s of Science in Materials Science and Engineering from the University of Florida.</p>
     </details>
   </div>
 
   <!-- PERSON 2 -->
   <div class="team-card">
-    <img class="team-photo" src="person2.png" alt="Dr. Danforth Miller">
-
+    person2.png
     <h3>Dr. Danforth Miller</h3>
-
     <details>
       <summary>Read Full Bio</summary>
-
-      <p>
-        Dr. Danforth Miller is a hypothesis-driven engineer, scientist, and inventor who brings
-        broad experience in leveraging pharmaceutics, materials science, engineering, and
-        computational modeling to drive effective development of drug products.
-      </p>
-
-      <p>
-        As a subject matter expert on multiple inhaled drug product approvals, Miller holds
-        specific expertise in the formulation and physical characterization of small molecules
-        and proteins to prevent and solve problems in applied research and product
-        development environments. He has led multi-disciplinary teams that have conducted
-        early-phase preclinical and clinical development over 25 years at both startups and
-        large pharmaceutical companies, including Inhale Therapeutic Systems (Nektar
-        Therapeutics), Novartis, Respira Therapeutics, and cystetic Medicines.
-      </p>
-
-      <p>
-        As an author of more than 30 scientific articles and nine issued patents, Miller has worked to advance
-        particle engineering technologies for pulmonary delivery of dry powder aerosols of
-        small molecules and proteins. He is a member of the Editorial Advisory Board at the
-        Journal of Pharmaceutical Sciences and holds a B.S. in Chemical Engineering from the
-        University of Colorado Boulder, as well as a Ph.D. in Chemical Engineering from the
-        University of Wisconsin-Madison.
-      </p>
-
+      <p>Dr. Danforth Miller is a hypothesis-driven engineer, scientist, and inventor who brings broad experience in
+      leveraging pharmaceutics, materials science, engineering, and computational modeling to drive effective development
+      of drug products.</p>
+      <p>As a subject matter expert on multiple inhaled drug product approvals, Miller holds specific expertise in the
+      formulation and physical characterization of small molecules and proteins to prevent and solve problems in applied
+      research and product development environments. He has led multi-disciplinary teams that have conducted early-phase
+      preclinical and clinical development over 25 years at both startups and large pharmaceutical companies, including
+      Inhale Therapeutic Systems (Nektar Therapeutics), Novartis, Respira Therapeutics, and cystetic Medicines.</p>
+      <p>As an author of more than 30 scientific articles and nine issued patents, Miller has worked to advance particle
+      engineering technologies for pulmonary delivery of dry powder aerosols of small molecules and proteins. He is a
+      member of the Editorial Advisory Board at the Journal of Pharmaceutical Sciences and holds a B.S. in Chemical
+      Engineering from the University of Colorado Boulder, as well as a Ph.D. in Chemical Engineering from the University
+      of Wisconsin-Madison.</p>
     </details>
   </div>
 
   <!-- PERSON 3 -->
   <div class="team-card">
-    <img class="team-photo" src="person3.png" alt="Thomas Tarara">
-
+    person3.png
     <h3>Thomas Tarara</h3>
-
     <details>
       <summary>Read Full Bio</summary>
-
-      <p>
-        Thomas Tarara is a highly experienced pharmaceutical development leader, inventor,
-        and analytical chemist. Specializing in drug and device development and technical
-        operations, Tarara brings over 30 years of working in the pharmaceutical industry to the
-        Flurry Powders team—along with a proven track record of creating, developing and
-        managing innovative pulmonary technologies.
-      </p>
-
-      <p>
-        Tarara also boasts deep experience with bioanalysis and the application of physicochemical characterization 
-        techniques used in research and development to Quality Control environments. He has held a range of 
-        technical, quality, and leadership roles across a multitude of high-profile pharmaceutical organizations.
-      </p>
-
-      <p>
-        Tarara is the author of more than 30 peer reviewed articles, and a named inventor on
-        over 50 issued patents directed to engineering particles for inhalation. He attended the
-        University of Arizona where he obtained a B.S. in Chemistry.
-      </p>
-
+      <p>Thomas Tarara is a highly experienced pharmaceutical development leader, inventor, and analytical chemist.
+      Specializing in drug and device development and technical operations, Tarara brings over 30 years of working in the
+      pharmaceutical industry to the Flurry Powders team—along with a proven track record of creating, developing and
+      managing innovative pulmonary technologies. Tarara also boasts deep experience with bioanalysis and the application
+      of physicochemical characterization techniques used in research and development to Quality Control environments. He
+      has held a range of technical, quality, and leadership roles across a multitude of high-profile pharmaceutical
+      organizations.</p>
+      <p>Tarara is the author of more than 30 peer reviewed articles, and a named inventor on over 50 issued patents
+      directed to engineering particles for inhalation. He attended the University of Arizona where he obtained a B.S. in
+      Chemistry.</p>
     </details>
   </div>
 
   <!-- PERSON 4 -->
   <div class="team-card">
-    <img class="team-photo" src="person4.png" alt="Dr. Jeffry Weers">
-
+    person4.png
     <h3>Dr. Jeffry Weers</h3>
-
     <details>
       <summary>Read Full Bio</summary>
-
-      <p>
-        An accomplished pharmaceutical professional and scientific innovator, Dr. Jeffry
-        Weers has spent his career pushing the frontiers of particle engineering for biomedical
-        applications.
-      </p>
-
-      <p>
-        For the last 25 years, Weers has focused on the design of formulations and devices for
-        respiratory drug delivery. A prolific inventor, Weers has worked for numerous
-        pharmaceutical corporations to bring innovative drug delivery solutions to market,
-        with nearly 300 issued patents worldwide leading to 7 approved products including
-        TOBI® Podhaler™. He has published over 100 peer reviewed articles and is a well-cited
-        author and international speaker.
-      </p>
-
-      <p>
-        Weers holds various honors for his work including the 2017 Alexander Fleming Serendipity Award from 
-        the London Business School, and Respiratory Drug Delivery’s Charles G. Thiel Award. He serves on the 
-        Editorial Board of the Journal of Aerosol Medicine and Pulmonary Drug Delivery and is an Associate 
-        Editor for Frontiers in Drug Delivery. Weers is an AAPS Fellow and received his Ph.D. in Chemistry 
-        from the University of California, Davis.
-      </p>
-
+      <p>An accomplished pharmaceutical professional and scientific innovator, Dr. Jeffry Weers has spent his career
+      pushing the frontiers of particle engineering for biomedical applications.</p>
+      <p>For the last 25 years, Weers has focused on the design of formulations and devices for respiratory drug delivery.
+      A prolific inventor, Weers has worked for numerous pharmaceutical corporations to bring innovative drug delivery
+      solutions to market, with nearly 300 issued patents worldwide leading to 7 approved products including TOBI®
+      Podhaler™. He has published over 100 peer reviewed articles and is a well-cited author and international speaker.</p>
+      <p>Weers holds various honors for his work including the 2017 Alexander Fleming Serendipity Award from the London
+      Business School, and Respiratory Drug Delivery’s Charles G. Thiel Award. He serves on the Editorial Board of the
+      Journal of Aerosol Medicine and Pulmonary Drug Delivery and is an Associate Editor for Frontiers in Drug Delivery.
+      Weers is an AAPS Fellow and received his Ph.D. in Chemistry from the University of California, Davis.</p>
     </details>
   </div>
 

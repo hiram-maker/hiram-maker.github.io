@@ -1,163 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team | Flurry Powders</title>
+<style>
+  .team-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
 
-    <style>
-        :root {
-            --orange: #D96A00;
-            --grey-light: #F2F2F2;
-            --black: #000000;
-            --white: #FFFFFF;
-        }
+  .team-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background: #fafafa;
+  }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: var(--grey-light);
-        }
+  .team-photo {
+    width: 100%;
+    height: 200px;
+    background: #ccc;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    object-fit: cover;
+  }
 
-        /* Sticky Header */
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+  details {
+    margin-top: 10px;
+  }
 
-        .nav-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.75rem 1.5rem;
-            background: var(--orange);
-            color: var(--white);
-        }
+  summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #0055ff;
+  }
 
-        .logo {
-            font-weight: bold;
-            text-decoration: none;
-            color: var(--white);
-            font-size: 1.2rem;
-        }
+  summary:hover {
+    text-decoration: underline;
+  }
+</style>
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 1.2rem;
-            margin: 0;
-            padding: 0;
-        }
+<div class="team-grid">
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--white);
-            font-weight: bold;
-        }
+  <!-- PERSON 1 -->
+  <div class="team-card">
+    <img class="team-photo" src="placeholder-person1.jpg" alt="Person 1">
 
-        @media (max-width: 600px) {
-            .nav-bar { padding: 0.5rem 1rem; }
-            .nav-links { gap: 0.8rem; }
-            .nav-links a { font-size: 0.9rem; }
-            .logo { font-size: 1rem; }
-        }
+    <h3>Person 1 Name</h3>
+    <p>Short intro placeholder for this team member.</p>
 
-        .section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-            background: var(--white);
-            margin-top: 20px;
-            border-radius: 8px;
-        }
+    <details>
+      <summary>Read Full Bio</summary>
+      <p>
+        Dr. Danforth Miller is a hypothesis-driven engineer, scientist, and inventor who brings
+        broad experience in leveraging pharmaceutics, materials science, engineering, and
+        computational modeling to drive effective development of drug products.
+      </p>
+      <p>
+        As a subject matter expert on multiple inhaled drug product approvals, Miller holds
+        specific expertise in the formulation and physical characterization of small molecules
+        and proteins to prevent and solve problems in applied research and product development
+        environments. He has led multidisciplinary teams conducting early-phase preclinical and
+        clinical development over 25 years at startups and large pharmaceutical companies,
+        including Inhale Therapeutic Systems (Nektar Therapeutics), Novartis, Respira Therapeutics,
+        and cystetic Medicines.
+      </p>
+      <p>
+        He is the author of 30+ scientific articles and nine issued patents, advancing particle
+        engineering for pulmonary delivery of dry powder aerosols. He serves on the Editorial
+        Advisory Board of the Journal of Pharmaceutical Sciences and holds a B.S. in Chemical
+        Engineering (University of Colorado Boulder) and a Ph.D. in Chemical Engineering
+        (University of Wisconsin–Madison).
+      </p>
+    </details>
+  </div>
 
-        /* Team Grid */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
+  <!-- PERSON 2 -->
+  <div class="team-card">
+    <img class="team-photo" src="placeholder-person2.jpg" alt="Person 2">
 
-        .team-member {
-            text-align: center;
-            padding: 10px;
-        }
+    <h3>Person 2 Name</h3>
+    <p>Short intro placeholder for this team member.</p>
 
-        .team-member img {
-            width: 160px;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid var(--orange);
-        }
+    <details>
+      <summary>Read Full Bio</summary>
+      <p>
+        Thomas Tarara is a highly experienced pharmaceutical development leader, inventor,
+        and analytical chemist. Specializing in drug and device development and technical
+        operations, Tarara brings over 30 years of experience to the Flurry Powders team.
+      </p>
+      <p>
+        He has deep expertise in bioanalysis and physicochemical characterization applied across
+        research and development to Quality Control environments. Tarara has held wide-ranging
+        technical, quality, and leadership roles at multiple major pharmaceutical organizations.
+      </p>
+      <p>
+        He has authored more than 30 peer‑reviewed articles and is named inventor on over 50
+        issued patents related to engineered particles for inhalation. Tarara earned a B.S. in
+        Chemistry from the University of Arizona.
+      </p>
+    </details>
+  </div>
 
-        @media (max-width: 900px) {
-            .team-grid { grid-template-columns: repeat(2, 1fr); }
-        }
+  <!-- PERSON 3 -->
+  <div class="team-card">
+    <img class="team-photo" src="placeholder-person3.jpg" alt="Person 3">
 
-        @media (max-width: 600px) {
-            .team-grid { grid-template-columns: 1fr; }
-            .team-member img { width: 200px; height: 200px; }
-        }
+    <h3>Person 3 Name</h3>
+    <p>Short intro placeholder for this team member.</p>
 
-        footer {
-            background: var(--orange);
-            color: var(--white);
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-    </style>
-</head>
+    <details>
+      <summary>Read Full Bio</summary>
+      <p>
+        Dr. Jeffry Weers is an accomplished pharmaceutical professional and scientific innovator
+        focused on pushing the frontiers of particle engineering for biomedical applications.
+      </p>
+      <p>
+        For 25 years, Weers has specialized in formulation and device design for respiratory drug
+        delivery. A prolific inventor, he holds nearly 300 issued patents worldwide and contributed
+        to seven approved products including TOBI® Podhaler™.
+      </p>
+      <p>
+        He has published more than 100 peer‑reviewed articles, is a well‑cited author and speaker,
+        and has received several honors including the 2017 Alexander Fleming Serendipity Award.
+        Weers serves on editorial boards including the Journal of Aerosol Medicine and Pulmonary
+        Drug Delivery and is an Associate Editor for Frontiers in Drug Delivery. He is an AAPS
+        Fellow and holds a Ph.D. in Chemistry from the University of California, Davis.
+      </p>
+    </details>
+  </div>
 
-<body>
+  <!-- PERSON 4 -->
+  <div class="team-card">
+    <img class="team-photo" src="placeholder-person4.jpg" alt="Person 4">
 
-<header class="site-header">
-    <nav class="nav-bar">
-        <a href="index.html" class="logo">Flurry Powders</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="technology.html">Tech</a></li>
-            <li><a href="who-we-are.html">Team</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <h3>Person 4 Name</h3>
+    <p>Short intro placeholder for this team member.</p>
 
-<section class="section">
-    <h2>Our Team</h2>
-    <p>
-        Flurry Powders is built by scientists, engineers, and innovators dedicated to advancing pharmaceutical development.
-    </p>
+    <details>
+      <summary>Read Full Bio</summary>
+      <p>
+        Full bio placeholder for team member #4. Add any amount of text here — the expandable
+        section can handle long bios without slowing down the site.
+      </p>
+    </details>
+  </div>
 
-    <div class="team-grid">
-
-        <div class="team-member">
-            <img src="images/person1.png" alt="Team Member 1">
-            <h3>Person One</h3>
-            <p>Title / Role</p>
-        </div>
-
-        <div class="team-member">
-            <img src="images/person2.png" alt="Team Member 2">
-            <h3>Person Two</h3>
-            <p>Title / Role</p>
-        </div>
-
-        <div class="team-member">
-            <img src="images/person3.png" alt="Team Member 3">
-            <h3>Person Three</h3>
-            <p>Title / Role</p>
-        </div>
-
-    </div>
-</section>
-
-<footer>
-    <p>© 2026 Flurry Powders — All Rights Reserved</p>
-</footer>
-
-</body>
-</html>
+</div>

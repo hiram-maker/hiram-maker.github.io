@@ -6,7 +6,6 @@
     <title>Flurry Powders</title>
 
     <style>
-        /* Brand Colors */
         :root {
             --orange: #D96A00;
             --grey-light: #F2F2F2;
@@ -57,36 +56,40 @@
             font-weight: bold;
         }
 
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
-
-        /* Mobile Cleanup */
         @media (max-width: 600px) {
-            .nav-bar {
-                padding: 0.5rem 1rem;
-            }
-
-            .nav-links {
-                gap: 0.8rem;
-            }
-
-            .nav-links a {
-                font-size: 0.9rem;
-            }
-
-            .logo {
-                font-size: 1rem;
-            }
+            .nav-bar { padding: 0.5rem 1rem; }
+            .nav-links a { font-size: 0.9rem; }
+            .logo { font-size: 1rem; }
         }
 
-        /* Page Sections */
         .section {
             padding: 40px 20px;
             max-width: 900px;
             margin: auto;
             background: var(--white);
             margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        /* Hero Logo */
+        .hero-logo {
+            width: 100%;
+            max-width: 420px;
+            display: block;
+            margin: 40px auto 20px auto;
+        }
+
+        /* Image Bands */
+        .image-band {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .image-band img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            max-height: 360px;
             border-radius: 8px;
         }
 
@@ -102,54 +105,70 @@
 
 <body>
 
-    <!-- Sticky Navigation -->
-    <header class="site-header">
-        <nav class="nav-bar">
-            <a href="index.html" class="logo">Flurry Powders</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="technology.html">Tech</a></li>
-                <li><a href="who-we-are.html">Team</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header class="site-header">
+    <nav class="nav-bar">
+        <a href="index.html" class="logo">Flurry Powders</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="technology.html">Tech</a></li>
+            <li><a href="who-we-are.html">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Main Sections -->
-    <section id="home" class="section">
-        <h2>Welcome to Flurry Powders</h2>
-        <p>
-            Flurry Powders is a CDMO specializing in precision powder technologies, formulation development, 
-            and advanced manufacturing solutions for pharmaceutical and biotech partners.
-        </p>
-    </section>
+<section id="home" class="section">
 
-    <section id="technology" class="section">
-        <h2>Technology Overview</h2>
-        <p>
-            Explore our capabilities, equipment, analytical methods, and scientific posters on the Technology page.
-        </p>
-        <p><a href="technology.html">Visit Technology →</a></p>
-    </section>
+    <!-- Hero Logo -->
+    <img src="images/hero-logo.png" alt="Flurry Powders Logo" class="hero-logo">
 
-    <section id="who" class="section">
-        <h2>Our Team</h2>
-        <p>
-            Meet the scientists and engineers behind Flurry Powders.
-        </p>
-        <p><a href="who-we-are.html">Visit Team Page →</a></p>
-    </section>
+    <h2>About Flurry Powders</h2>
+    <p>
+        Flurry Powders specializes in porous‑particle spray drying and advanced formulation development for dry‑powder inhalation and nasal delivery systems. The team brings decades of experience developing successful inhalation products and offers R&D‑focused PSD1 spray drying, analytical testing, and formulation consulting services.
+    </p>
+    <p>
+        Flurry combines deep expertise across formulation, colloidal science, aerosol physics, materials science, and device engineering. This approach has been validated in multiple FDA‑approved and late‑stage inhalation programs utilizing porous‑particle spray‑drying platforms such as PulmoSpheres™.
+    </p>
+    <p>
+        Our bespoke PSD1 spray‑drying system produces powders with superior aerosol performance and higher yields than standard CDMO equipment. The R&D‑driven, GMP‑aligned workflow supports rapid iteration, advanced analytical testing, and IND‑ready technical packages prior to full GMP tech transfer.
+    </p>
+    <p>
+        Learn more at <strong>www.flurrypowders.com</strong>.
+    </p>
 
-    <section id="contact" class="section">
-        <h2>Contact Us</h2>
-        <p>Email: info@flurrypowders.com</p>
-        <p>Phone: (555) 123‑4567</p>
-        <p>Location: Your City, State</p>
-    </section>
+    <!-- Inspirational Image Band -->
+    <div class="image-band">
+        <img src="images/lab1.jpg" alt="Laboratory imagery">
+    </div>
 
-    <footer>
-        <p>© 2026 Flurry Powders — All Rights Reserved</p>
-    </footer>
+</section>
+
+<section id="technology" class="section">
+    <h2>Technology Overview</h2>
+    <p>Explore our capabilities, equipment, analytical methods, and scientific posters on the Technology page.</p>
+    <p><a href="technology.html">Visit Technology →</a></p>
+
+    <div class="image-band">
+        <img src="images/spraydryer.jpg" alt="Spray drying equipment">
+    </div>
+</section>
+
+<section id="who" class="section">
+    <h2>Our Team</h2>
+    <p>Meet the scientists and engineers behind Flurry Powders.</p>
+    <p><a href="who-we-are.html">Visit Team Page →</a></p>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Email: info@flurrypowders.com</p>
+    <p>Phone: (555) 123‑4567</p>
+    <p>Location: Your City, State</p>
+</section>
+
+<footer>
+    <p>© 2026 Flurry Powders — All Rights Reserved</p>
+</footer>
 
 </body>
 </html>

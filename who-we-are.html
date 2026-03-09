@@ -97,10 +97,25 @@
       margin: 12px 0 4px 0;
     }
 
+    .role {
+      margin: 0 0 6px 0;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .linkedin-link {
+      display: inline-block;
+      margin: 4px 0 0 0;
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .linkedin-link:hover { text-decoration: underline; }
+
     /* Mobile/tablet bio: <details> */
     details {
       margin-top: 12px;
-      text-align: left;
+      text-align: left; /* bios read better left-aligned */
     }
     summary {
       cursor: pointer;
@@ -149,8 +164,16 @@
       border: 2px solid var(--orange);
     }
     .bio-dialog__name { font-size: 1.1rem; font-weight: 700; margin: 0; }
+    .bio-dialog__spacer { flex: 1 1 auto; }
+    .bio-dialog__link {
+      margin-right: 8px;
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .bio-dialog__link:hover { text-decoration: underline; }
     .bio-dialog__close {
-      margin-left: auto;
       background: transparent;
       border: none;
       font-size: 20px;
@@ -216,11 +239,12 @@
 
     <div class="team-grid">
 
-      <!-- Andreas Boeckl -->
+      <!-- Andreas Boeckl — Spray Drying Technology Expert -->
       <div class="team-member">
-        <img src="images/person1.png" alt="Andreas Boeckl" />
+        <img src="images/person1.png" alt="Andreas Boeckl — Spray Drying Technology Expert" />
         <h3>Andreas Boeckl</h3>
-        <p>Title / Role</p>
+        <p class="role">Spray Drying Technology Expert</p>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/andreas-boeckl-19627a4?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 
         <!-- Mobile/Tablet: native dropdown -->
         <details>
@@ -232,15 +256,16 @@
 
         <!-- Desktop: modal button -->
         <div class="bio-actions">
-          <button class="bio-button" data-dialog="bio-andreas">Read Full Bio</button>
+          <button class="bio-button" data-dialog="bio-andreas" aria-haspopup="dialog">Read Full Bio</button>
         </div>
       </div>
 
-      <!-- Dr. Danforth Miller -->
+      <!-- Dr. Danforth Miller — Solid State Expert -->
       <div class="team-member">
-        <img src="images/person2.png" alt="Dr. Danforth Miller" />
+        <img src="images/person2.png" alt="Dr. Danforth Miller — Solid State Expert" />
         <h3>Dr. Danforth Miller</h3>
-        <p>Title / Role</p>
+        <p class="role">Solid State Expert</p>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/danpmiller?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 
         <details>
           <summary>Read Full Bio</summary>
@@ -263,15 +288,16 @@
         </details>
 
         <div class="bio-actions">
-          <button class="bio-button" data-dialog="bio-miller">Read Full Bio</button>
+          <button class="bio-button" data-dialog="bio-miller" aria-haspopup="dialog">Read Full Bio</button>
         </div>
       </div>
 
-      <!-- Thomas Tarara -->
+      <!-- Thomas Tarara — Formulation Expert -->
       <div class="team-member">
-        <img src="images/person3.png" alt="Thomas Tarara" />
+        <img src="images/person3.png" alt="Thomas Tarara — Formulation Expert" />
         <h3>Thomas Tarara</h3>
-        <p>Title / Role</p>
+        <p class="role">Formulation Expert</p>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/thomas-tarara-56aa3515?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 
         <details>
           <summary>Read Full Bio</summary>
@@ -290,15 +316,16 @@
         </details>
 
         <div class="bio-actions">
-          <button class="bio-button" data-dialog="bio-tarara">Read Full Bio</button>
+          <button class="bio-button" data-dialog="bio-tarara" aria-haspopup="dialog">Read Full Bio</button>
         </div>
       </div>
 
-      <!-- Dr. Jeffry Weers -->
+      <!-- Dr. Jeffry Weers — Aerosol Expert Advisor -->
       <div class="team-member">
-        <img src="images/person4.png" alt="Dr. Jeffry Weers" />
+        <img src="images/person4.png" alt="Dr. Jeffry Weers — Aerosol Expert Advisor" />
         <h3>Dr. Jeffry Weers</h3>
-        <p>Title / Role</p>
+        <p class="role">Aerosol Expert Advisor</p>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/jeffry-weers-1b923b4?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 
         <details>
           <summary>Read Full Bio</summary>
@@ -319,7 +346,7 @@
         </details>
 
         <div class="bio-actions">
-          <button class="bio-button" data-dialog="bio-weers">Read Full Bio</button>
+          <button class="bio-button" data-dialog="bio-weers" aria-haspopup="dialog">Read Full Bio</button>
         </div>
       </div>
 
@@ -327,10 +354,12 @@
   </section>
 
   <!-- DESKTOP MODALS (dialog) -->
-  <dialog class="bio-dialog" id="bio-andreas">
+  <dialog class="bio-dialog" id="bio-andreas" aria-label="Full bio for Andreas Boeckl">
     <div class="bio-dialog__header">
-      <img src="images/person1.png" alt="Andreas Boeckl" />
-      <p class="bio-dialog__name">Andreas Boeckl</p>
+      <img src="images/person1.png" alt="Andreas Boeckl — Spray Drying Technology Expert" />
+      <p class="bio-dialog__name">Andreas Boeckl — Spray Drying Technology Expert</p>
+      <span class="bio-dialog__spacer"></span>
+      <a class="bio-dialog__link" href="https://www.linkedin.com/in/andreas-boeckl-19627a4?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <button class="bio-dialog__close" aria-label="Close">&times;</button>
     </div>
     <div class="bio-dialog__content">
@@ -340,10 +369,12 @@
     </div>
   </dialog>
 
-  <dialog class="bio-dialog" id="bio-miller">
+  <dialog class="bio-dialog" id="bio-miller" aria-label="Full bio for Dr. Danforth Miller">
     <div class="bio-dialog__header">
-      <img src="images/person2.png" alt="Dr. Danforth Miller" />
-      <p class="bio-dialog__name">Dr. Danforth Miller</p>
+      <img src="images/person2.png" alt="Dr. Danforth Miller — Solid State Expert" />
+      <p class="bio-dialog__name">Dr. Danforth Miller — Solid State Expert</p>
+      <span class="bio-dialog__spacer"></span>
+      <a class="bio-dialog__link" href="https://www.linkedin.com/in/danpmiller?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <button class="bio-dialog__close" aria-label="Close">&times;</button>
     </div>
     <div class="bio-dialog__content">
@@ -366,10 +397,12 @@
     </div>
   </dialog>
 
-  <dialog class="bio-dialog" id="bio-tarara">
+  <dialog class="bio-dialog" id="bio-tarara" aria-label="Full bio for Thomas Tarara">
     <div class="bio-dialog__header">
-      <img src="images/person3.png" alt="Thomas Tarara" />
-      <p class="bio-dialog__name">Thomas Tarara</p>
+      <img src="images/person3.png" alt="Thomas Tarara — Formulation Expert" />
+      <p class="bio-dialog__name">Thomas Tarara — Formulation Expert</p>
+      <span class="bio-dialog__spacer"></span>
+      <a class="bio-dialog__link" href="https://www.linkedin.com/in/thomas-tarara-56aa3515?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <button class="bio-dialog__close" aria-label="Close">&times;</button>
     </div>
     <div class="bio-dialog__content">
@@ -388,10 +421,12 @@
     </div>
   </dialog>
 
-  <dialog class="bio-dialog" id="bio-weers">
+  <dialog class="bio-dialog" id="bio-weers" aria-label="Full bio for Dr. Jeffry Weers">
     <div class="bio-dialog__header">
-      <img src="images/person4.png" alt="Dr. Jeffry Weers" />
-      <p class="bio-dialog__name">Dr. Jeffry Weers</p>
+      <img src="images/person4.png" alt="Dr. Jeffry Weers — Aerosol Expert Advisor" />
+      <p class="bio-dialog__name">Dr. Jeffry Weers — Aerosol Expert Advisor</p>
+      <span class="bio-dialog__spacer"></span>
+      <a class="bio-dialog__link" href="https://www.linkedin.com/in/jeffry-weers-1b923b4?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <button class="bio-dialog__close" aria-label="Close">&times;</button>
     </div>
     <div class="bio-dialog__content">

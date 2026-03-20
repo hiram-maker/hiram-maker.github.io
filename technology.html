@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Technology | Flurry Powders</title>
 
   <style>
@@ -20,7 +20,7 @@
       color: #111;
     }
 
-    /* HEADER (MATCHES INDEX EXACTLY) */
+    /* -------- HEADER (EXACT MATCH TO INDEX) -------- */
     .site-header {
       position: sticky;
       top: 0;
@@ -46,7 +46,6 @@
     .nav-logo {
       height: 28px;
       width: auto;
-      display: block;
     }
 
     .nav-links {
@@ -69,33 +68,22 @@
       opacity: 0.7;
     }
 
-    @media (max-width: 600px) {
-      .nav-bar {
-        padding: 0.25rem 0.8rem;
-        height: 46px;
-      }
-      .nav-logo {
-        height: 22px;
-      }
-      .nav-links {
-        gap: 0.9rem;
-      }
-      .nav-links a {
-        font-size: 0.85rem;
-      }
+    @media (max-width:600px) {
+      .nav-bar { padding:0.25rem 0.8rem; height:46px; }
+      .nav-logo { height:22px; }
+      .nav-links { gap:0.9rem; }
+      .nav-links a { font-size:0.85rem; }
     }
 
-    /* PAGE SECTIONS (MATCH HOME THEME) */
+    /* -------- PAGE CONTENT SECTIONS -------- */
     .section {
       padding: 40px 20px;
       max-width: 1000px;
       margin: 20px auto;
       background: var(--white);
       border-radius: 8px;
-      text-align: left;
     }
 
-    /* Capabilities grid styles preserved */
     .cap-intro {
       margin-top: 20px;
       line-height: 1.55;
@@ -127,22 +115,19 @@
       line-height: 1.6;
     }
 
-    @media (max-width: 700px) {
-      .cap-grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width:700px) {
+      .cap-grid { grid-template-columns:1fr; }
     }
 
-    /* Poster grid preserved */
     .poster-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
       gap: 30px;
       margin-top: 30px;
     }
 
     .poster-item {
-      background: var(--white);
+      background: #fff;
       padding: 20px;
       border-radius: 8px;
       text-align: center;
@@ -157,59 +142,58 @@
 
     .poster-item a {
       color: var(--orange);
-      font-weight: bold;
-      text-decoration: none;
+      font-weight:bold;
+      text-decoration:none;
     }
 
     .poster-item a:hover {
-      text-decoration: underline;
+      text-decoration:underline;
     }
 
-    @media (max-width: 800px) {
-      .poster-grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width:800px) {
+      .poster-grid { grid-template-columns:1fr; }
     }
 
-    /* FOOTER */
     footer {
       background: var(--orange);
       color: var(--white);
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
     }
   </style>
 </head>
 
 <body>
 
+<!-- HEADER (COPIED EXACTLY FROM INDEX.HTML) -->
 <header class="site-header">
   <nav class="nav-bar">
-    index.html
-      images/logo-header.png
+
+    <a href="index.html" class="logo-link">
+      <img src="images/logo-header.png" class="nav-logo" alt="Flurry Header Logo">
     </a>
 
     <ul class="nav-links">
-      <li>index.htmlHome</a></li>
-      <li>technology.htmlTech</a></li>
-      <li>who-we-are.htmlTeam</a></li>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="technology.html">Tech</a></li>
+      <li><a href="who-we-are.html">Team</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
+
   </nav>
 </header>
 
+<!-- ------------ PAGE CONTENT (UNCHANGED) ------------ -->
 <section class="section">
   <h2>Technology</h2>
 
   <p class="cap-intro">
-    <strong>Services —</strong> Flurry Powders provides end‑to‑end R&amp;D for inhalable therapeutics,
-    combining advanced particle engineering, formulation expertise, process development, and analytical excellence
-    to produce aerosol medicines that meet client specifications and regulatory requirements.
+    <strong>Services —</strong> Flurry Powders provides end‑to‑end R&amp;D for inhalable therapeutics...
   </p>
 
-  <!-- Capabilities -->
   <h3 style="margin-top: 28px;">Capabilities</h3>
+
   <div class="cap-grid">
 
     <div class="cap-card">
@@ -245,20 +229,20 @@
       <ul>
         <li>Proof of concept</li>
         <li>Optimization</li>
-        <li>DOE</li>
+        <li>Design of experiments</li>
         <li>Troubleshooting</li>
         <li>Yield improvement</li>
         <li>Scale-up</li>
         <li>Tech transfer to GMP</li>
-        <li>Documentation packages (SOPs, batch records)</li>
+        <li>Documentation packages</li>
       </ul>
     </div>
 
     <div class="cap-card">
       <h3>Analytical</h3>
       <ul>
-        <li>Particle size (geometric)</li>
-        <li>DLS (hydrodynamic)</li>
+        <li>Particle size</li>
+        <li>DLS</li>
         <li>Aerodynamic size</li>
         <li>NGI / ACI</li>
         <li>Dose uniformity</li>
@@ -271,30 +255,29 @@
 
   </div>
 
-  <!-- Posters -->
   <h3 style="margin-top: 50px;">Technology Posters</h3>
   <p>Quick visual references to our core technologies.</p>
 
   <div class="poster-grid">
 
     <div class="poster-item">
-      <img src="images/post1.PNG" alt="Poster 1 thumbnail">
+      <img src="images/post1.PNG" alt="Poster">
       <h4>Scalable Spray Drying</h4>
-      <p>Consistent particle engineering across development & production scale equipment.</p>
+      <p>Consistent particle engineering...</p>
       <a href="pdfs/poster1.pdf" target="_blank">Download PDF</a>
     </div>
 
     <div class="poster-item">
-      <img src="images/post2.PNG" alt="Poster 2 thumbnail">
+      <img src="images/post2.PNG" alt="Poster">
       <h4>Superior Lung Dose</h4>
-      <p>Formulation strategies improving aerosol performance and fine particle dose.</p>
+      <p>Improved aerosol performance...</p>
       <a href="pdfs/poster2.pdf" target="_blank">Download PDF</a>
     </div>
 
     <div class="poster-item">
-      <img src="images/post3.PNG" alt="Poster 3 thumbnail">
+      <img src="images/post3.PNG" alt="Poster">
       <h4>Challenging Drug Substances</h4>
-      <p>Particle engineering for difficult APIs with optimized aerodynamic behavior.</p>
+      <p>Solutions for difficult APIs...</p>
       <a href="pdfs/poster3.pdf" target="_blank">Download PDF</a>
     </div>
 

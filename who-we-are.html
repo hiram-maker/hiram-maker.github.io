@@ -21,52 +21,51 @@
       color: #111;
     }
 
-    /* Sticky Header */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+/* Sticky Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* NEW: thin orange line across the top */
+.header-top-band {
+  height: 6px;
+  width: 100%;
+  background: var(--orange);
+}
+
+/* NEW: white main header bar */
 .nav-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.35rem 1.2rem;
-    background: var(--orange);
-    color: var(--white);
-    height: 52px;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 1.2rem;
+  background: var(--white);
+  color: var(--black);
+  height: 70px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e5e5e5;
 }
+
 .logo-link {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
+/* NEW: bigger full-color logo */
 .nav-logo {
-    height: 28px;
-    width: auto;
-    display: block;
+  height: 55px;
+  width: auto;
+  display: block;
 }
-    .logo {
-      font-weight: bold;
-      text-decoration: none;
-      color: var(--white);
-      font-size: 1.2rem;
-    }
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1.2rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--white);
-      font-weight: bold;
-    }
+/* NEW: orange nav text */
+.nav-links a {
+  text-decoration: none;
+  color: var(--orange);
+  font-weight: 700;
+}
 
     @media (max-width: 600px) {
       .nav-bar { padding: 0.5rem 1rem; }
@@ -231,21 +230,15 @@
 <body>
 
 <header class="site-header">
+
+  <div class="header-top-band"></div>
+
   <nav class="nav-bar">
 
     <a href="index.html" class="logo-link">
-      <img src="images/logo-header.png" alt="Flurry Header Logo" class="nav-logo invert">
+      <img src="images/logo-color.png" alt="Flurry Header Logo" class="nav-logo">
     </a>
 
-    <ul class="nav-links">
-      <li><a href="index.html#home">Home</a></li>
-      <li><a href="technology.html">Services</a></li>
-      <li><a href="who-we-are.html">Team</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-
-  </nav>
-</header>
 
   <section class="section">
     <h2>Our Team</h2>

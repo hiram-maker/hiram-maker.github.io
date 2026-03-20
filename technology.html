@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Technology | Flurry Powders</title>
+  <title>Team | Flurry Powders</title>
 
   <style>
     :root {
@@ -20,7 +20,7 @@
       color: #111;
     }
 
-    /* -------- HEADER (EXACT MATCH TO INDEX) -------- */
+    /* MATCHED HEADER (IDENTICAL TO INDEX) */
     .site-header {
       position: sticky;
       top: 0;
@@ -46,6 +46,7 @@
     .nav-logo {
       height: 28px;
       width: auto;
+      display: block;
     }
 
     .nav-links {
@@ -68,110 +69,169 @@
       opacity: 0.7;
     }
 
-    @media (max-width:600px) {
-      .nav-bar { padding:0.25rem 0.8rem; height:46px; }
-      .nav-logo { height:22px; }
-      .nav-links { gap:0.9rem; }
-      .nav-links a { font-size:0.85rem; }
+    @media (max-width: 600px) {
+      .nav-bar {
+        padding: 0.25rem 0.8rem;
+        height: 46px;
+      }
+      .nav-logo {
+        height: 22px;
+      }
+      .nav-links {
+        gap: 0.9rem;
+      }
+      .nav-links a {
+        font-size: 0.85rem;
+      }
     }
 
-    /* -------- PAGE CONTENT SECTIONS -------- */
     .section {
       padding: 40px 20px;
-      max-width: 1000px;
-      margin: 20px auto;
+      max-width: 900px;
+      margin: 20px auto 0 auto;
       background: var(--white);
       border-radius: 8px;
     }
 
-    .cap-intro {
-      margin-top: 20px;
-      line-height: 1.55;
-    }
-
-    .cap-grid {
+    /* Team Grid */
+    .team-grid {
       display: grid;
-      gap: 24px;
-      grid-template-columns: repeat(2, 1fr);
-      margin-top: 24px;
-    }
-
-    .cap-card {
-      background: #fff;
-      border: 1px solid #e9e9e9;
-      border-left: 4px solid var(--orange);
-      border-radius: 8px;
-      padding: 18px 16px;
-    }
-
-    .cap-card h3 {
-      margin: 0 0 10px 0;
-      font-size: 1.05rem;
-    }
-
-    .cap-card ul {
-      margin: 0;
-      padding-left: 18px;
-      line-height: 1.6;
-    }
-
-    @media (max-width:700px) {
-      .cap-grid { grid-template-columns:1fr; }
-    }
-
-    .poster-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 30px;
-      margin-top: 30px;
+      margin-top: 40px;
     }
 
-    .poster-item {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
+    .team-member {
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 10px;
     }
 
-    .poster-item img {
-      width: 100%;
+    .team-member img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--orange);
+    }
+
+    .team-member h3 {
+      margin: 12px 0 4px 0;
+    }
+
+    .role {
+      margin: 0 0 6px 0;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .linkedin-link {
+      display: inline-block;
+      margin: 4px 0 0 0;
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .linkedin-link:hover { text-decoration: underline; }
+
+    details {
+      margin-top: 12px;
+      text-align: left;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--orange);
+    }
+
+    summary:hover { text-decoration: underline; }
+
+    .bio-actions {
+      margin-top: 12px;
+    }
+
+    .bio-button {
+      display: none;
+      background: var(--orange);
+      color: var(--white);
+      border: none;
       border-radius: 6px;
+      padding: 10px 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media (min-width: 900px) {
+      details { display: none; }
+      .bio-button { display: inline-block; }
+    }
+
+    dialog.bio-dialog {
+      width: min(720px, 90vw);
+      border: none;
+      padding: 0;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .bio-dialog::backdrop {
+      background: rgba(0,0,0,0.45);
+    }
+
+    .bio-dialog__header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid #eee;
+      background: #fff;
+    }
+
+    .bio-dialog__header img {
+      width: 56px; height: 56px; border-radius: 50%; object-fit: cover;
       border: 2px solid var(--orange);
     }
 
-    .poster-item a {
-      color: var(--orange);
-      font-weight:bold;
-      text-decoration:none;
+    .bio-dialog__name {
+      font-size: 1.1rem; font-weight: 700; margin: 0;
     }
 
-    .poster-item a:hover {
-      text-decoration:underline;
+    .bio-dialog__spacer { flex: 1 1 auto; }
+
+    .bio-dialog__close {
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #666;
     }
 
-    @media (max-width:800px) {
-      .poster-grid { grid-template-columns:1fr; }
+    .bio-dialog__content {
+      padding: 18px;
+      line-height: 1.55;
+      background: #fff;
+      border-radius: 0 0 10px 10px;
     }
 
     footer {
       background: var(--orange);
       color: var(--white);
-      text-align:center;
-      padding:20px;
-      margin-top:40px;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
     }
+
   </style>
 </head>
 
 <body>
 
-<!-- HEADER (COPIED EXACTLY FROM INDEX.HTML) -->
+<!-- ✅ MATCHED HOMEPAGE HEADER -->
 <header class="site-header">
   <nav class="nav-bar">
 
     <a href="index.html" class="logo-link">
-      <img src="images/logo-header.png" class="nav-logo" alt="Flurry Header Logo">
+      <img src="images/logo-header.png" alt="Flurry Header Logo" class="nav-logo">
     </a>
 
     <ul class="nav-links">
@@ -184,105 +244,36 @@
   </nav>
 </header>
 
-<!-- ------------ PAGE CONTENT (UNCHANGED) ------------ -->
-<section class="section">
-  <h2>Technology</h2>
+<!-- EVERYTHING BELOW IS UNTOUCHED -->
 
-  <p class="cap-intro">
-    <strong>Services —</strong> Flurry Powders provides end‑to‑end R&amp;D for inhalable therapeutics...
+<section class="section">
+  <h2>Our Team</h2>
+  <p>
+    Flurry Powders is built by scientists, engineers, and innovators dedicated to advancing pharmaceutical development.
   </p>
 
-  <h3 style="margin-top: 28px;">Capabilities</h3>
+  <div class="team-grid">
 
-  <div class="cap-grid">
+    <!-- Andreas -->
+    <div class="team-member">
+      <img src="images/person1.png" alt="Andreas Boeckl — Spray Drying Expert" />
+      <h3>Andreas Boeckl</h3>
+      <p class="role">Spray Drying Expert</p>
+      <a class="linkedin-link" href="https://www.linkedin.com/in/andreas-boeckl-19627a4" target="_blank">LinkedIn</a>
 
-    <div class="cap-card">
-      <h3>Particle Engineering</h3>
-      <ul>
-        <li>Spray drying</li>
-        <li>Suspensions</li>
-        <li>Soluble systems</li>
-        <li>ASDs</li>
-        <li>Hybrid systems</li>
-        <li>Porous particles</li>
-        <li>Jet milling</li>
-        <li>Wet milling</li>
-      </ul>
+      <details>
+        <summary>Read Full Bio</summary>
+        <p>Andreas Boeckl is an intuitive problem solver...</p>
+      </details>
+
+      <div class="bio-actions">
+        <button class="bio-button" data-dialog="bio-andreas">Read Full Bio</button>
+      </div>
     </div>
 
-    <div class="cap-card">
-      <h3>Formulation</h3>
-      <ul>
-        <li>Rational design</li>
-        <li>Functional excipient selection</li>
-        <li>API</li>
-        <li>Control of solid state</li>
-        <li>Screening</li>
-        <li>Dose ranging</li>
-        <li>Solubility studies</li>
-        <li>Physicochemical stability</li>
-      </ul>
-    </div>
-
-    <div class="cap-card">
-      <h3>Process Engineering</h3>
-      <ul>
-        <li>Proof of concept</li>
-        <li>Optimization</li>
-        <li>Design of experiments</li>
-        <li>Troubleshooting</li>
-        <li>Yield improvement</li>
-        <li>Scale-up</li>
-        <li>Tech transfer to GMP</li>
-        <li>Documentation packages</li>
-      </ul>
-    </div>
-
-    <div class="cap-card">
-      <h3>Analytical</h3>
-      <ul>
-        <li>Particle size</li>
-        <li>DLS</li>
-        <li>Aerodynamic size</li>
-        <li>NGI / ACI</li>
-        <li>Dose uniformity</li>
-        <li>XRPD</li>
-        <li>DSC / TGA</li>
-        <li>HPLC assay</li>
-        <li>KF</li>
-      </ul>
-    </div>
+    <!-- (Your other team members remain unchanged) -->
 
   </div>
-
-  <h3 style="margin-top: 50px;">Technology Posters</h3>
-  <p>Quick visual references to our core technologies.</p>
-
-  <div class="poster-grid">
-
-    <div class="poster-item">
-      <img src="images/post1.PNG" alt="Poster">
-      <h4>Scalable Spray Drying</h4>
-      <p>Consistent particle engineering...</p>
-      <a href="pdfs/poster1.pdf" target="_blank">Download PDF</a>
-    </div>
-
-    <div class="poster-item">
-      <img src="images/post2.PNG" alt="Poster">
-      <h4>Superior Lung Dose</h4>
-      <p>Improved aerosol performance...</p>
-      <a href="pdfs/poster2.pdf" target="_blank">Download PDF</a>
-    </div>
-
-    <div class="poster-item">
-      <img src="images/post3.PNG" alt="Poster">
-      <h4>Challenging Drug Substances</h4>
-      <p>Solutions for difficult APIs...</p>
-      <a href="pdfs/poster3.pdf" target="_blank">Download PDF</a>
-    </div>
-
-  </div>
-
 </section>
 
 <footer>

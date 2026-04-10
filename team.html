@@ -19,7 +19,7 @@ body {
   color: #111;
 }
 
-/* HEADER â€” kept aligned to supplied site header structure */
+/* HEADER â€” copied from supplied team/home header structure */
 .site-header {
   position: sticky;
   top: 0;
@@ -73,110 +73,92 @@ body {
   .nav-bar { padding: 0.5rem 1rem; }
   .nav-links { gap: 0.8rem; }
   .nav-links a { font-size: 1.5rem; }
+  .logo { font-size: 1rem; }
 }
 
 /* PAGE */
 .section {
   padding: 40px 20px;
-  max-width: 1120px;
+  max-width: 980px;
   margin: 20px auto 0 auto;
   background: var(--white);
   border-radius: 8px;
   box-sizing: border-box;
 }
 
-.intro {
-  max-width: 760px;
-}
-
-.intro h2 {
+.section h2 {
   margin: 0 0 10px 0;
-  font-size: 2rem;
 }
 
-.intro p {
+.section p.lead {
   margin: 0;
   line-height: 1.6;
+  max-width: 760px;
 }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 28px;
-  margin-top: 36px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 40px;
 }
 
-.member-card {
-  background: #fff;
-  border: 1px solid #ececec;
-  border-radius: 12px;
-  padding: 22px 18px;
+.team-member {
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 10px;
 }
 
-.member-photo {
-  width: 165px;
-  height: 165px;
+.team-member img {
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid var(--orange);
-  display: block;
-  margin: 0 auto 16px auto;
 }
 
-.member-card h3 {
+.team-member h3 {
+  margin: 12px 0 4px 0;
+}
+
+.role {
   margin: 0 0 6px 0;
-  font-size: 1.1rem;
-}
-
-.member-role {
-  margin: 0 0 10px 0;
-  color: #444;
   font-weight: 600;
+  color: #444;
   min-height: 1.2em;
 }
 
-.member-excerpt {
-  margin: 0;
-  line-height: 1.55;
-  color: #333;
-  font-size: 0.96rem;
-}
-
-.member-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 16px;
-}
-
-.linkedin-link,
-.bio-button {
+.linkedin-link {
+  display: inline-block;
+  margin: 4px 0 0 0;
   color: var(--orange);
-  font-weight: 700;
   text-decoration: none;
-  background: none;
+  font-weight: bold;
+}
+
+.linkedin-link:hover { text-decoration: underline; }
+
+.member-actions {
+  margin-top: 12px;
+}
+
+.bio-button {
+  background: var(--orange);
+  color: var(--white);
   border: none;
-  padding: 0;
-  font: inherit;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-weight: bold;
   cursor: pointer;
 }
 
-.linkedin-link:hover,
-.bio-button:hover {
-  text-decoration: underline;
-}
+.bio-button:hover { filter: brightness(0.95); }
 
-/* Dialogs */
-dialog.bio-dialog {
-  width: min(760px, 92vw);
+.bio-dialog {
+  width: min(720px, 90vw);
   border: none;
-  border-radius: 12px;
   padding: 0;
-  box-shadow: 0 12px 36px rgba(0,0,0,0.24);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 .bio-dialog::backdrop {
@@ -186,28 +168,24 @@ dialog.bio-dialog {
 .bio-dialog__header {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 18px;
-  border-bottom: 1px solid #ededed;
+  gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid #eee;
   background: #fff;
 }
 
 .bio-dialog__header img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
+  object-fit: cover;
   border: 2px solid var(--orange);
 }
 
-.bio-dialog__title-wrap {
-  min-width: 0;
-}
-
 .bio-dialog__name {
-  margin: 0;
   font-size: 1.1rem;
   font-weight: 700;
+  margin: 0;
 }
 
 .bio-dialog__role {
@@ -216,59 +194,42 @@ dialog.bio-dialog {
   font-size: 0.95rem;
 }
 
-.bio-dialog__spacer {
-  flex: 1 1 auto;
-}
+.bio-dialog__spacer { flex: 1 1 auto; }
 
 .bio-dialog__link {
+  margin-right: 8px;
   color: var(--orange);
   text-decoration: none;
   font-weight: 700;
-  margin-right: 8px;
   white-space: nowrap;
 }
 
-.bio-dialog__link:hover {
-  text-decoration: underline;
-}
+.bio-dialog__link:hover { text-decoration: underline; }
 
 .bio-dialog__close {
   background: transparent;
   border: none;
-  font-size: 26px;
-  color: #666;
+  font-size: 20px;
   cursor: pointer;
-  line-height: 1;
+  color: #666;
 }
 
 .bio-dialog__content {
   padding: 18px;
-  line-height: 1.65;
+  line-height: 1.55;
+  background: #fff;
+  border-radius: 0 0 10px 10px;
 }
 
-.bio-dialog__content p {
-  margin: 0 0 14px 0;
+.bio-dialog__content p { margin: 0 0 12px 0; }
+
+@media (max-width: 900px) {
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 1024px) {
-  .team-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 640px) {
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .member-photo {
-    width: 190px;
-    height: 190px;
-  }
-
-  .nav-links a {
-    font-size: 0.95rem;
-  }
+@media (max-width: 600px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .team-member img { width: 200px; height: 200px; }
 }
 
 footer {
@@ -281,7 +242,6 @@ footer {
 </style>
 </head>
 <body>
-
 <header class="site-header">
   <div class="header-top-band"></div>
   <nav class="nav-bar">
@@ -298,62 +258,56 @@ footer {
 </header>
 
 <section class="section">
-  <div class="intro">
-    <h2>Our Team</h2>
-    <p>Flurry Powders is founded and led by scientists and engineers with a demonstrated history of innovation and delivering pharmaceutical products to the market.</p>
-  </div>
+  <h2>Our Team</h2>
+  <p class="lead">Flurry Powders is founded and led by scientists and engineers with a demonstrated history of innovation and delivering pharmaceutical products to the market.</p>
 
   <div class="team-grid">
-    <article class="member-card">
-      <img src="images/person1.png" alt="Andreas Boeckl" class="member-photo">
+    <div class="team-member">
+      <img src="images/person1.png" alt="Andreas Boeckl" />
       <h3>Andreas Boeckl</h3>
-      <p class="member-role">&nbsp;</p>
-      <p class="member-excerpt">Andreas Boeckl is an intuitive problem solver who excels when confronted with seemingly unsolvable problems and pursues efficient, practical validation before committing resources.</p>
-      <div class="member-links">
-        <a class="linkedin-link" href="https://www.linkedin.com/in/andreas-boeckl-19627a4?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <button class="bio-button" data-dialog="bio-andreas" aria-haspopup="dialog">Read Full Bio</button>
+      <p class="role">&nbsp;</p>
+      <a class="linkedin-link" href="https://www.linkedin.com/in/andreas-boeckl-19627a4?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <div class="member-actions">
+        <button class="bio-button" data-dialog="bio-andreas">Read Full Bio</button>
       </div>
-    </article>
+    </div>
 
-    <article class="member-card">
-      <img src="images/person2.png" alt="Danforth Miller, Ph.D." class="member-photo">
+    <div class="team-member">
+      <img src="images/person2.png" alt="Danforth Miller, Ph.D." />
       <h3>Danforth Miller, Ph.D.</h3>
-      <p class="member-role">&nbsp;</p>
-      <p class="member-excerpt">Danforth Miller is a hypothesis-driven engineer, scientist, and inventor with broad experience across pharmaceutics, materials science, engineering, and computational modeling.</p>
-      <div class="member-links">
-        <a class="linkedin-link" href="https://www.linkedin.com/in/danpmiller?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <button class="bio-button" data-dialog="bio-miller" aria-haspopup="dialog">Read Full Bio</button>
+      <p class="role">&nbsp;</p>
+      <a class="linkedin-link" href="https://www.linkedin.com/in/danpmiller?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <div class="member-actions">
+        <button class="bio-button" data-dialog="bio-miller">Read Full Bio</button>
       </div>
-    </article>
+    </div>
 
-    <article class="member-card">
-      <img src="images/person3.png" alt="Thomas Tarara" class="member-photo">
+    <div class="team-member">
+      <img src="images/person3.png" alt="Thomas Tarara" />
       <h3>Thomas Tarara</h3>
-      <p class="member-role">&nbsp;</p>
-      <p class="member-excerpt">Thomas Tarara is a highly experienced pharmaceutical development leader, inventor, and analytical chemist specializing in drug and device development and technical operations.</p>
-      <div class="member-links">
-        <a class="linkedin-link" href="https://www.linkedin.com/in/thomas-tarara-56aa3515?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <button class="bio-button" data-dialog="bio-tarara" aria-haspopup="dialog">Read Full Bio</button>
+      <p class="role">&nbsp;</p>
+      <a class="linkedin-link" href="https://www.linkedin.com/in/thomas-tarara-56aa3515?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <div class="member-actions">
+        <button class="bio-button" data-dialog="bio-tarara">Read Full Bio</button>
       </div>
-    </article>
+    </div>
 
-    <article class="member-card">
-      <img src="images/person4.png" alt="Jeffry Weers, Ph.D." class="member-photo">
+    <div class="team-member">
+      <img src="images/person4.png" alt="Jeffry Weers, Ph.D." />
       <h3>Jeffry Weers, Ph.D.</h3>
-      <p class="member-role">Scientific Advisor</p>
-      <p class="member-excerpt">An accomplished pharmaceutical professional and scientific innovator, Dr. Jeffry Weers has spent his career pushing the frontiers of particle engineering for biomedical applications.</p>
-      <div class="member-links">
-        <a class="linkedin-link" href="https://www.linkedin.com/in/jeffry-weers-1b923b4?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <button class="bio-button" data-dialog="bio-weers" aria-haspopup="dialog">Read Full Bio</button>
+      <p class="role">Scientific Advisor</p>
+      <a class="linkedin-link" href="https://www.linkedin.com/in/jeffry-weers-1b923b4?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <div class="member-actions">
+        <button class="bio-button" data-dialog="bio-weers">Read Full Bio</button>
       </div>
-    </article>
+    </div>
   </div>
 </section>
 
 <dialog class="bio-dialog" id="bio-andreas" aria-label="Full bio for Andreas Boeckl">
   <div class="bio-dialog__header">
-    <img src="images/person1.png" alt="Andreas Boeckl">
-    <div class="bio-dialog__title-wrap">
+    <img src="images/person1.png" alt="Andreas Boeckl" />
+    <div>
       <p class="bio-dialog__name">Andreas Boeckl</p>
     </div>
     <span class="bio-dialog__spacer"></span>
@@ -369,8 +323,8 @@ footer {
 
 <dialog class="bio-dialog" id="bio-miller" aria-label="Full bio for Danforth Miller">
   <div class="bio-dialog__header">
-    <img src="images/person2.png" alt="Danforth Miller, Ph.D.">
-    <div class="bio-dialog__title-wrap">
+    <img src="images/person2.png" alt="Danforth Miller, Ph.D." />
+    <div>
       <p class="bio-dialog__name">Danforth Miller, Ph.D.</p>
     </div>
     <span class="bio-dialog__spacer"></span>
@@ -386,8 +340,8 @@ footer {
 
 <dialog class="bio-dialog" id="bio-tarara" aria-label="Full bio for Thomas Tarara">
   <div class="bio-dialog__header">
-    <img src="images/person3.png" alt="Thomas Tarara">
-    <div class="bio-dialog__title-wrap">
+    <img src="images/person3.png" alt="Thomas Tarara" />
+    <div>
       <p class="bio-dialog__name">Thomas Tarara</p>
     </div>
     <span class="bio-dialog__spacer"></span>
@@ -403,8 +357,8 @@ footer {
 
 <dialog class="bio-dialog" id="bio-weers" aria-label="Full bio for Jeffry Weers">
   <div class="bio-dialog__header">
-    <img src="images/person4.png" alt="Jeffry Weers, Ph.D.">
-    <div class="bio-dialog__title-wrap">
+    <img src="images/person4.png" alt="Jeffry Weers, Ph.D." />
+    <div>
       <p class="bio-dialog__name">Jeffry Weers, Ph.D.</p>
       <p class="bio-dialog__role">Scientific Advisor</p>
     </div>
@@ -419,32 +373,33 @@ footer {
   </div>
 </dialog>
 
+<script>
+document.querySelectorAll('.bio-button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const id = btn.getAttribute('data-dialog');
+    const dlg = document.getElementById(id);
+    if (dlg) dlg.showModal();
+  });
+});
+
+document.querySelectorAll('.bio-dialog__close').forEach(btn => {
+  btn.addEventListener('click', () => btn.closest('dialog').close());
+});
+
+document.querySelectorAll('dialog.bio-dialog').forEach(dlg => {
+  dlg.addEventListener('click', (e) => {
+    const rect = dlg.getBoundingClientRect();
+    const inDialog = (
+      e.clientX >= rect.left && e.clientX <= rect.right &&
+      e.clientY >= rect.top && e.clientY <= rect.bottom
+    );
+    if (!inDialog) dlg.close();
+  });
+});
+</script>
+
 <footer>
   <p>Â© 2026 Flurry Powders â€” All Rights Reserved</p>
 </footer>
-
-<script>
-  document.querySelectorAll('.bio-button').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var dlg = document.getElementById(btn.getAttribute('data-dialog'));
-      if (dlg) dlg.showModal();
-    });
-  });
-
-  document.querySelectorAll('.bio-dialog__close').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      btn.closest('dialog').close();
-    });
-  });
-
-  document.querySelectorAll('dialog.bio-dialog').forEach(function(dlg) {
-    dlg.addEventListener('click', function(e) {
-      var rect = dlg.getBoundingClientRect();
-      var inside = e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
-      if (!inside) dlg.close();
-    });
-  });
-</script>
-
 </body>
 </html>

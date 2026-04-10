@@ -1,37 +1,45 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Team | Flurry Powders</title>
-<style>
-:root {
-  --orange: #D96A00;
-  --grey-light: #F2F2F2;
-  --black: #000000;
-  --white: #FFFFFF;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Team | Flurry Powders</title>
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--grey-light);
-  color: #111;
-}
 
-/* HEADER â€” copied from supplied team/home header structure */
+  <style>
+    :root {
+      --orange: #D96A00;
+      --grey-light: #F2F2F2;
+      --black: #000000;
+      --white: #FFFFFF;
+    }
+.invert {
+    filter: invert(1) brightness(200%);
+}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--grey-light);
+      color: #111;
+    }
+
+
+/* Sticky Header */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
+
+/* NEW: thin orange line across the top */
 .header-top-band {
   height: 6px;
   width: 100%;
   background: var(--orange);
 }
 
+
+/* NEW: white main header bar */
 .nav-bar {
   display: flex;
   justify-content: space-between;
@@ -44,362 +52,507 @@ body {
   border-bottom: 1px solid #e5e5e5;
 }
 
+
 .logo-link {
   display: flex;
   align-items: center;
 }
 
+
+/* NEW: bigger full-color logo */
 .nav-logo {
   height: 55px;
   width: auto;
   display: block;
 }
 
-.nav-links {
-  display: flex;
-  gap: 1.4rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
 
+/* NEW: orange nav text */
 .nav-links a {
   text-decoration: none;
   color: var(--orange);
   font-weight: 700;
 }
 
-@media (max-width: 600px) {
-  .nav-bar { padding: 0.5rem 1rem; }
-  .nav-links { gap: 0.8rem; }
-  .nav-links a { font-size: 1.5rem; }
-  .logo { font-size: 1rem; }
+
+    @media (max-width: 600px) {
+      .nav-bar { padding: 0.5rem 1rem; }
+      .nav-links { gap: 0.8rem; }
+      .nav-links a { font-size: 1.2rem; }
+      .logo { font-size: 1rem; }
+    }
+
+
+    .section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 20px auto 0 auto;
+      background: var(--white);
+      border-radius: 8px;
+    }
+
+
+    /* Team Grid */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+
+    .team-member {
+      text-align: center;
+      padding: 10px;
+    }
+
+
+    .team-member img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--orange);
+    }
+
+
+    .team-member h3 {
+      margin: 12px 0 4px 0;
+    }
+
+
+    .role {
+      margin: 0 0 6px 0;
+      font-weight: 600;
+      color: #444;
+    }
+
+
+    .linkedin-link {
+      display: inline-block;
+      margin: 4px 0 0 0;
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .linkedin-link:hover { text-decoration: underline; }
+
+
+    /* Mobile/tablet bio: <details> */
+    details {
+      margin-top: 12px;
+      text-align: left; /* bios read better left-aligned */
+    }
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--orange);
+      outline: none;
+    }
+    summary:hover { text-decoration: underline; }
+
+
+    /* Desktop bio: "Read Full Bio" button + dialog */
+    .bio-actions {
+      margin-top: 12px;
+    }
+    .bio-button {
+      display: none; /* hidden on mobile/tablet; shown on desktop in media query */
+      background: var(--orange);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .bio-button:hover { filter: brightness(0.95); }
+
+
+    dialog.bio-dialog {
+      width: min(720px, 90vw);
+      border: none;
+      padding: 0;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+    .bio-dialog::backdrop {
+      background: rgba(0,0,0,0.45);
+    }
+    .bio-dialog__header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid #eee;
+      background: #fff;
+    }
+    .bio-dialog__header img {
+      width: 56px; height: 56px; border-radius: 50%; object-fit: cover;
+      border: 2px solid var(--orange);
+    }
+    .bio-dialog__name { font-size: 1.1rem; font-weight: 700; margin: 0; }
+    .bio-dialog__spacer { flex: 1 1 auto; }
+    .bio-dialog__link {
+      margin-right: 8px;
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .bio-dialog__link:hover { text-decoration: underline; }
+    .bio-dialog__close {
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #666;
+    }
+    .bio-dialog__content {
+      padding: 18px;
+      line-height: 1.55;
+      background: #fff;
+      border-radius: 0 0 10px 10px;
+    }
+    .bio-dialog__content p { margin: 0 0 12px 0; }
+
+
+    /* Responsive: 4-up at wider screens, then 2-up, then 1-up */
+    @media (min-width: 1100px) {
+      .team-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .team-grid { grid-template-columns: 1fr; }
+      .team-member img { width: 200px; height: 200px; }
+    }
+
+
+    /* Show dialog button on desktop; hide <details>.
+       On mobile/tablet, do the opposite (keep it simple). */
+    @media (min-width: 900px) {
+      details { display: none; }
+      .bio-button { display: inline-block; }
+    }
+/* FIX: Make nav links horizontal and remove bullets */
+.nav-links {
+    display: flex;
+    gap: 1.4rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
-
-/* PAGE */
-.section {
-  padding: 40px 20px;
-  max-width: 980px;
-  margin: 20px auto 0 auto;
-  background: var(--white);
-  border-radius: 8px;
-  box-sizing: border-box;
-}
-
-.section h2 {
-  margin: 0 0 10px 0;
-}
-
-.section p.lead {
-  margin: 0;
-  line-height: 1.6;
-  max-width: 760px;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.team-member {
-  text-align: center;
-  padding: 10px;
-}
-
-.team-member img {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--orange);
-}
-
-.team-member h3 {
-  margin: 12px 0 4px 0;
-}
-
-.role {
-  margin: 0 0 6px 0;
-  font-weight: 600;
-  color: #444;
-  min-height: 1.2em;
-}
-
-.linkedin-link {
-  display: inline-block;
-  margin: 4px 0 0 0;
-  color: var(--orange);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.linkedin-link:hover { text-decoration: underline; }
-
-.member-actions {
-  margin-top: 12px;
-}
-
-.bio-button {
-  background: var(--orange);
-  color: var(--white);
-  border: none;
-  border-radius: 6px;
-  padding: 10px 14px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.bio-button:hover { filter: brightness(0.95); }
-
-.bio-dialog {
-  width: min(720px, 90vw);
-  border: none;
-  padding: 0;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-}
-
-.bio-dialog::backdrop {
-  background: rgba(0,0,0,0.45);
-}
-
-.bio-dialog__header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 18px;
-  border-bottom: 1px solid #eee;
-  background: #fff;
-}
-
-.bio-dialog__header img {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--orange);
-}
-
-.bio-dialog__name {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin: 0;
-}
-
-.bio-dialog__role {
-  margin: 4px 0 0 0;
-  color: #555;
-  font-size: 0.95rem;
-}
-
-.bio-dialog__spacer { flex: 1 1 auto; }
-
-.bio-dialog__link {
-  margin-right: 8px;
-  color: var(--orange);
-  text-decoration: none;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.bio-dialog__link:hover { text-decoration: underline; }
-
-.bio-dialog__close {
-  background: transparent;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #666;
-}
-
-.bio-dialog__content {
-  padding: 18px;
-  line-height: 1.55;
-  background: #fff;
-  border-radius: 0 0 10px 10px;
-}
-
-.bio-dialog__content p { margin: 0 0 12px 0; }
-
-@media (max-width: 900px) {
-  .team-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 600px) {
-  .team-grid { grid-template-columns: 1fr; }
-  .team-member img { width: 200px; height: 200px; }
-}
-
-footer {
-  background: var(--orange);
-  color: var(--white);
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-}
-</style>
+    footer {
+      background: var(--orange);
+      color: var(--white);
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
+
+
 <body>
 <header class="site-header">
+
+
   <div class="header-top-band"></div>
+
+
   <nav class="nav-bar">
+
+
     <a href="index.html" class="logo-link">
       <img src="images/logo-color.png" alt="Flurry Header Logo" class="nav-logo">
     </a>
-    <ul class="nav-links">
+ <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="team.html">Team</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
+
+
+
+
   </nav>
+
+
 </header>
 
-<section class="section">
-  <h2>Our Team</h2>
-  <p class="lead">Flurry Powders is founded and led by scientists and engineers with a demonstrated history of innovation and delivering pharmaceutical products to the market.</p>
 
-  <div class="team-grid">
-    <div class="team-member">
-      <img src="images/person1.png" alt="Andreas Boeckl" />
-      <h3>Andreas Boeckl</h3>
-      <p class="role">&nbsp;</p>
-      <a class="linkedin-link" href="https://www.linkedin.com/in/andreas-boeckl-19627a4?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <div class="member-actions">
-        <button class="bio-button" data-dialog="bio-andreas">Read Full Bio</button>
+
+
+  <section class="section">
+    <h2>Our Team</h2>
+    <p>
+      Flurry Powders is founded and led by scientists and engineers with a demonstrated history of
+innovation and delivering pharmaceutical products to the market.
+    </p>
+
+
+    <div class="team-grid">
+
+
+      <!-- Andreas Boeckl — Spray Drying Expert -->
+      <div class="team-member">
+        <img src="images/person1.png" alt="Andreas Boeckl" />
+        <h3>Andreas Boeckl</h3>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/andreas-boeckl-19627a4?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+
+        <!-- Mobile/Tablet: native dropdown -->
+        <details>
+          <summary>Read Full Bio</summary>
+          <p>Andreas Boeckl is an intuitive problem solver, who excels when confronted with seemingly unsolvable problems, frequently generating approaches that the rational mind would not think to chase. He has a pragmatic mindset that is fixated on efficiency – testing hypotheses and validating concepts with lightweight experiments, prototypes, or thought experiments before committing precious resources.</p>
+          <p>Obsessed with spray drying as a means to manipulate the physicochemical properties of materials, Boeckl founded Flurry Powders in 2010 with the vision of bridging the gap between product ideation and clinical and commercial manufacturing. Prior to Flurry Powders, Boeckl has held engineering positions in research and development at Inhale Therapeutic Systems (Nektar Therapeutics), Lockheed Martin's Advanced Technology Center, and as an independent consultant to industry.</p>
+          <p>During his 8 years at Inhale, he invented, designed, tested, and implemented novel spray drying and powder filling equipment that addressed the challenges presented by ultra-fine, low density, spray dried powders. Andreas holds a Bachelor’s of Science in Materials Science and Engineering from the University of Florida.</p>
+        </details>
+
+
+        <!-- Desktop: modal button -->
+        <div class="bio-actions">
+          <button class="bio-button" data-dialog="bio-andreas" aria-haspopup="dialog">Read Full Bio</button>
+        </div>
       </div>
-    </div>
 
-    <div class="team-member">
-      <img src="images/person2.png" alt="Danforth Miller, Ph.D." />
-      <h3>Danforth Miller, Ph.D.</h3>
-      <p class="role">&nbsp;</p>
-      <a class="linkedin-link" href="https://www.linkedin.com/in/danpmiller?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <div class="member-actions">
-        <button class="bio-button" data-dialog="bio-miller">Read Full Bio</button>
+
+      <!-- Dr. Danforth Miller — Solid State Expert -->
+      <div class="team-member">
+        <img src="images/person2.png" alt="Dr. Danforth Miller — Solid State Expert" />
+        <h3>Danforth Miller, Ph.D.</h3>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/danpmiller?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+
+        <details>
+          <summary>Read Full Bio</summary>
+          <p></p>Danforth Miller is a hypothesis-driven engineer, scientist, and inventor who brings
+          broad experience in leveraging pharmaceutics, materials science, engineering, and
+          computational modeling to drive effective development of drug products.</p>
+          <p>As a subject matter expert on multiple inhaled drug product approvals, Miller holds
+          specific expertise in the formulation and physical characterization of small molecules
+          and proteins to prevent and solve problems in applied research and product
+          development environments. He has led multi-disciplinary teams that have conducted
+          early-phase preclinical and clinical development over 25 years at both startups and
+          large pharmaceutical companies, including Inhale Therapeutic Systems (Nektar
+          Therapeutics), Novartis, Respira Therapeutics, and cystetic Medicines.</p>
+          <p>As an author of more than 30 scientific articles and nine issued patents, Miller has worked to advance
+          particle engineering technologies for pulmonary delivery of dry powder aerosols of
+          small molecules and proteins. He is a member of the Editorial Advisory Board at the
+          Journal of Pharmaceutical Sciences and holds a B.S. in Chemical Engineering from the
+          University of Colorado Boulder, as well as a Ph.D. in Chemical Engineering from the
+          University of Wisconsin-Madison.</p>
+        </details>
+
+
+        <div class="bio-actions">
+          <button class="bio-button" data-dialog="bio-miller" aria-haspopup="dialog">Read Full Bio</button>
+        </div>
       </div>
-    </div>
 
-    <div class="team-member">
-      <img src="images/person3.png" alt="Thomas Tarara" />
-      <h3>Thomas Tarara</h3>
-      <p class="role">&nbsp;</p>
-      <a class="linkedin-link" href="https://www.linkedin.com/in/thomas-tarara-56aa3515?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <div class="member-actions">
-        <button class="bio-button" data-dialog="bio-tarara">Read Full Bio</button>
+
+      <!-- Thomas Tarara — Formulation Expert -->
+      <div class="team-member">
+        <img src="images/person3.png" alt="Thomas Tarara — Formulation Expert" />
+        <h3>Thomas Tarara</h3>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/thomas-tarara-56aa3515?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+
+        <details>
+          <summary>Read Full Bio</summary>
+          <p>Thomas Tarara is a highly experienced pharmaceutical development leader, inventor,
+          and analytical chemist. Specializing in drug and device development and technical
+          operations, Tarara brings over 30 years of working in the pharmaceutical industry to the
+          Flurry Powders team—along with a proven track record of creating, developing and
+          managing innovative pulmonary technologies. Tarara also boasts deep experience with
+          bioanalysis and the application of physicochemical characterization techniques used
+          in research and development to Quality Control environments. He has held a range of
+          technical, quality, and leadership roles across a multitude of high-profile
+          pharmaceutical organizations.</p>
+          <p>Tarara is the author of more than 30 peer reviewed articles, and a named inventor on
+          over 50 issued patents directed to engineering particles for inhalation. He attended the
+          University of Arizona where he obtained a B.S. in Chemistry.</p>
+        </details>
+
+
+        <div class="bio-actions">
+          <button class="bio-button" data-dialog="bio-tarara" aria-haspopup="dialog">Read Full Bio</button>
+        </div>
       </div>
-    </div>
 
-    <div class="team-member">
-      <img src="images/person4.png" alt="Jeffry Weers, Ph.D." />
-      <h3>Jeffry Weers, Ph.D.</h3>
-      <p class="role">Scientific Advisor</p>
-      <a class="linkedin-link" href="https://www.linkedin.com/in/jeffry-weers-1b923b4?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <div class="member-actions">
-        <button class="bio-button" data-dialog="bio-weers">Read Full Bio</button>
+
+      <!-- Dr. Jeffry Weers — Aerosol Expert Advisor -->
+      <div class="team-member">
+        <img src="images/person4.png" alt="Dr. Jeffry Weers — Aerosol Expert Advisor" />
+        <h3>Jeffry Weers, Ph.D.</h3>
+        <p class="role">Scientific Advisor</p>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/jeffry-weers-1b923b4?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+
+        <details>
+          <summary>Read Full Bio</summary>
+          <p>An accomplished pharmaceutical professional and scientific innovator, Dr. Jeffry
+          Weers has spent his career pushing the frontiers of particle engineering for biomedical
+          applications.</p>
+          <p>For the last 25 years, Weers has focused on the design of formulations and devices for
+          respiratory drug delivery. A prolific inventor, Weers has worked for numerous
+          pharmaceutical corporations to bring innovative drug delivery solutions to market,
+          with nearly 300 issued patents worldwide leading to 7 approved products including
+          TOBI® Podhaler™. He has published over 100 peer reviewed articles and is a well-cited
+          author and international speaker.</p>
+          <p>Weers holds various honors for his work including the 2017 Alexander Fleming Serendipity Award from the
+          London Business School, and Respiratory Drug Delivery’s Charles G. Thiel Award. He serves on the Editorial
+          Board of the Journal of Aerosol Medicine and Pulmonary Drug Delivery and is an Associate Editor for Frontiers
+          in Drug Delivery. Weers is an AAPS Fellow and received his Ph.D. in Chemistry from the University of
+          California, Davis.</p>
+        </details>
+
+
+        <div class="bio-actions">
+          <button class="bio-button" data-dialog="bio-weers" aria-haspopup="dialog">Read Full Bio</button>
+        </div>
       </div>
+
+
     </div>
-  </div>
-</section>
+  </section>
 
-<dialog class="bio-dialog" id="bio-andreas" aria-label="Full bio for Andreas Boeckl">
-  <div class="bio-dialog__header">
-    <img src="images/person1.png" alt="Andreas Boeckl" />
-    <div>
-      <p class="bio-dialog__name">Andreas Boeckl</p>
+
+  <!-- DESKTOP MODALS (dialog) -->
+  <dialog class="bio-dialog" id="bio-andreas" aria-label="Full bio for Andreas Boeckl">
+    <div class="bio-dialog__header">
+      <img src="images/person1.png" alt="Andreas Boeckl — Spray Drying Expert" />
+      <p class="bio-dialog__name">Andreas Boeckl — Spray Drying Expert</p>
+      <span class="bio-dialog__spacer"></span>
+      <a class="bio-dialog__link" href="https://www.linkedin.com/in/andreas-boeckl-19627a4?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <button class="bio-dialog__close" aria-label="Close">&times;</button>
     </div>
-    <span class="bio-dialog__spacer"></span>
-    <a class="bio-dialog__link" href="https://www.linkedin.com/in/andreas-boeckl-19627a4?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <button class="bio-dialog__close" aria-label="Close">&times;</button>
-  </div>
-  <div class="bio-dialog__content">
-    <p>Andreas Boeckl is an intuitive problem solver, who excels when confronted with seemingly unsolvable problems, frequently generating approaches that the rational mind would not think to chase. He has a pragmatic mindset that is fixated on efficiency â€“ testing hypotheses and validating concepts with lightweight experiments, prototypes, or thought experiments before committing precious resources.</p>
-    <p>Obsessed with spray drying as a means to manipulate the physicochemical properties of materials, Boeckl founded Flurry Powders in 2010 with the vision of bridging the gap between product ideation and clinical and commercial manufacturing. Prior to Flurry Powders, Boeckl has held engineering positions in research and development at Inhale Therapeutic Systems (Nektar Therapeutics), Lockheed Martin's Advanced Technology Center, and as an independent consultant to industry.</p>
-    <p>During his 8 years at Inhale, he invented, designed, tested, and implemented novel spray drying and powder filling equipment that addressed the challenges presented by ultra-fine, low density, spray dried powders. Andreas holds a Bachelorâ€™s of Science in Materials Science and Engineering from the University of Florida.</p>
-  </div>
-</dialog>
-
-<dialog class="bio-dialog" id="bio-miller" aria-label="Full bio for Danforth Miller">
-  <div class="bio-dialog__header">
-    <img src="images/person2.png" alt="Danforth Miller, Ph.D." />
-    <div>
-      <p class="bio-dialog__name">Danforth Miller, Ph.D.</p>
+    <div class="bio-dialog__content">
+      <p>Andreas Boeckl is an intuitive problem solver, who excels when confronted with seemingly unsolvable problems, frequently generating approaches that the rational mind would not think to chase. He has a pragmatic mindset that is fixated on efficiency – testing hypotheses and validating concepts with lightweight experiments, prototypes, or thought experiments before committing precious resources.</p>
+      <p>Obsessed with spray drying as a means to manipulate the physicochemical properties of materials, Boeckl founded Flurry Powders in 2010 with the vision of bridging the gap between product ideation and clinical and commercial manufacturing. Prior to Flurry Powders, Boeckl has held engineering positions in research and development at Inhale Therapeutic Systems (Nektar Therapeutics), Lockheed Martin's Advanced Technology Center, and as an independent consultant to industry.</p>
+      <p>During his 8 years at Inhale, he invented, designed, tested, and implemented novel spray drying and powder filling equipment that addressed the challenges presented by ultra-fine, low density, spray dried powders. Andreas holds a Bachelor’s of Science in Materials Science and Engineering from the University of Florida.</p>
     </div>
-    <span class="bio-dialog__spacer"></span>
-    <a class="bio-dialog__link" href="https://www.linkedin.com/in/danpmiller?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <button class="bio-dialog__close" aria-label="Close">&times;</button>
-  </div>
-  <div class="bio-dialog__content">
-    <p>Danforth Miller is a hypothesis-driven engineer, scientist, and inventor who brings broad experience in leveraging pharmaceutics, materials science, engineering, and computational modeling to drive effective development of drug products.</p>
-    <p>As a subject matter expert on multiple inhaled drug product approvals, Miller holds specific expertise in the formulation and physical characterization of small molecules and proteins to prevent and solve problems in applied research and product development environments. He has led multi-disciplinary teams that have conducted early-phase preclinical and clinical development over 25 years at both startups and large pharmaceutical companies, including Inhale Therapeutic Systems (Nektar Therapeutics), Novartis, Respira Therapeutics, and cystetic Medicines.</p>
-    <p>As an author of more than 30 scientific articles and nine issued patents, Miller has worked to advance particle engineering technologies for pulmonary delivery of dry powder aerosols of small molecules and proteins. He is a member of the Editorial Advisory Board at the Journal of Pharmaceutical Sciences and holds a B.S. in Chemical Engineering from the University of Colorado Boulder, as well as a Ph.D. in Chemical Engineering from the University of Wisconsin-Madison.</p>
-  </div>
-</dialog>
+  </dialog>
 
-<dialog class="bio-dialog" id="bio-tarara" aria-label="Full bio for Thomas Tarara">
-  <div class="bio-dialog__header">
-    <img src="images/person3.png" alt="Thomas Tarara" />
-    <div>
-      <p class="bio-dialog__name">Thomas Tarara</p>
+
+  <dialog class="bio-dialog" id="bio-miller" aria-label="Full bio for Dr. Danforth Miller">
+    <div class="bio-dialog__header">
+      <img src="images/person2.png" alt="Dr. Danforth Miller — Solid State Expert" />
+      <p class="bio-dialog__name">Dr. Danforth Miller — Solid State Expert</p>
+      <span class="bio-dialog__spacer"></span>
+      <a class="bio-dialog__link" href="https://www.linkedin.com/in/danpmiller?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <button class="bio-dialog__close" aria-label="Close">&times;</button>
     </div>
-    <span class="bio-dialog__spacer"></span>
-    <a class="bio-dialog__link" href="https://www.linkedin.com/in/thomas-tarara-56aa3515?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <button class="bio-dialog__close" aria-label="Close">&times;</button>
-  </div>
-  <div class="bio-dialog__content">
-    <p>Thomas Tarara is a highly experienced pharmaceutical development leader, inventor, and analytical chemist. Specializing in drug and device development and technical operations, Tarara brings over 30 years of working in the pharmaceutical industry to the Flurry Powders teamâ€”along with a proven track record of creating, developing and managing innovative pulmonary technologies.</p>
-    <p>Tarara also boasts deep experience with bioanalysis and the application of physicochemical characterization techniques used in research and development to Quality Control environments. He has held a range of technical, quality, and leadership roles across a multitude of high-profile pharmaceutical organizations.</p>
-    <p>Tarara is the author of more than 30 peer reviewed articles, and a named inventor on over 50 issued patents directed to engineering particles for inhalation. He attended the University of Arizona where he obtained a B.S. in Chemistry.</p>
-  </div>
-</dialog>
-
-<dialog class="bio-dialog" id="bio-weers" aria-label="Full bio for Jeffry Weers">
-  <div class="bio-dialog__header">
-    <img src="images/person4.png" alt="Jeffry Weers, Ph.D." />
-    <div>
-      <p class="bio-dialog__name">Jeffry Weers, Ph.D.</p>
-      <p class="bio-dialog__role">Scientific Advisor</p>
+    <div class="bio-dialog__content">
+      <p>Danforth Miller is a hypothesis-driven engineer, scientist, and inventor who brings
+      broad experience in leveraging pharmaceutics, materials science, engineering, and
+      computational modeling to drive effective development of drug products.</p>
+      <p>As a subject matter expert on multiple inhaled drug product approvals, Miller holds
+      specific expertise in the formulation and physical characterization of small molecules
+      and proteins to prevent and solve problems in applied research and product
+      development environments. He has led multi-disciplinary teams that have conducted
+      early-phase preclinical and clinical development over 25 years at both startups and
+      large pharmaceutical companies, including Inhale Therapeutic Systems (Nektar
+      Therapeutics), Novartis, Respira Therapeutics, and cystetic Medicines.</p>
+      <p>As an author of more than 30 scientific articles and nine issued patents, Miller has worked to advance
+      particle engineering technologies for pulmonary delivery of dry powder aerosols of
+      small molecules and proteins. He is a member of the Editorial Advisory Board at the
+      Journal of Pharmaceutical Sciences and holds a B.S. in Chemical Engineering from the
+      University of Colorado Boulder, as well as a Ph.D. in Chemical Engineering from the
+      University of Wisconsin-Madison.</p>
     </div>
-    <span class="bio-dialog__spacer"></span>
-    <a class="bio-dialog__link" href="https://www.linkedin.com/in/jeffry-weers-1b923b4?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <button class="bio-dialog__close" aria-label="Close">&times;</button>
-  </div>
-  <div class="bio-dialog__content">
-    <p>An accomplished pharmaceutical professional and scientific innovator, Dr. Jeffry Weers has spent his career pushing the frontiers of particle engineering for biomedical applications.</p>
-    <p>For the last 25 years, Weers has focused on the design of formulations and devices for respiratory drug delivery. A prolific inventor, Weers has worked for numerous pharmaceutical corporations to bring innovative drug delivery solutions to market, with nearly 300 issued patents worldwide leading to 7 approved products including TOBIÂ® Podhalerâ„¢. He has published over 100 peer reviewed articles and is a well-cited author and international speaker.</p>
-    <p>Weers holds various honors for his work including the 2017 Alexander Fleming Serendipity Award from the London Business School, and Respiratory Drug Deliveryâ€™s Charles G. Thiel Award. He serves on the Editorial Board of the Journal of Aerosol Medicine and Pulmonary Drug Delivery and is an Associate Editor for Frontiers in Drug Delivery. Weers is an AAPS Fellow and received his Ph.D. in Chemistry from the University of California, Davis.</p>
-  </div>
-</dialog>
+  </dialog>
 
-<script>
-document.querySelectorAll('.bio-button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const id = btn.getAttribute('data-dialog');
-    const dlg = document.getElementById(id);
-    if (dlg) dlg.showModal();
-  });
-});
 
-document.querySelectorAll('.bio-dialog__close').forEach(btn => {
-  btn.addEventListener('click', () => btn.closest('dialog').close());
-});
+  <dialog class="bio-dialog" id="bio-tarara" aria-label="Full bio for Thomas Tarara">
+    <div class="bio-dialog__header">
+      <img src="images/person3.png" alt="Thomas Tarara — Formulation Expert" />
+      <p class="bio-dialog__name">Thomas Tarara — Formulation Expert</p>
+      <span class="bio-dialog__spacer"></span>
+      <a class="bio-dialog__link" href="https://www.linkedin.com/in/thomas-tarara-56aa3515?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <button class="bio-dialog__close" aria-label="Close">&times;</button>
+    </div>
+    <div class="bio-dialog__content">
+      <p>Thomas Tarara is a highly experienced pharmaceutical development leader, inventor,
+      and analytical chemist. Specializing in drug and device development and technical
+      operations, Tarara brings over 30 years of working in the pharmaceutical industry to the
+      Flurry Powders team—along with a proven track record of creating, developing and
+      managing innovative pulmonary technologies. Tarara also boasts deep experience with
+      bioanalysis and the application of physicochemical characterization techniques used
+      in research and development to Quality Control environments. He has held a range of
+      technical, quality, and leadership roles across a multitude of high-profile
+      pharmaceutical organizations.</p>
+      <p>Tarara is the author of more than 30 peer reviewed articles, and a named inventor on
+      over 50 issued patents directed to engineering particles for inhalation. He attended the
+      University of Arizona where he obtained a B.S. in Chemistry.</p>
+    </div>
+  </dialog>
 
-document.querySelectorAll('dialog.bio-dialog').forEach(dlg => {
-  dlg.addEventListener('click', (e) => {
-    const rect = dlg.getBoundingClientRect();
-    const inDialog = (
-      e.clientX >= rect.left && e.clientX <= rect.right &&
-      e.clientY >= rect.top && e.clientY <= rect.bottom
-    );
-    if (!inDialog) dlg.close();
-  });
-});
-</script>
 
-<footer>
-  <p>Â© 2026 Flurry Powders â€” All Rights Reserved</p>
-</footer>
+  <dialog class="bio-dialog" id="bio-weers" aria-label="Full bio for Dr. Jeffry Weers">
+    <div class="bio-dialog__header">
+      <img src="images/person4.png" alt="Dr. Jeffry Weers — Aerosol Expert Advisor" />
+      <p class="bio-dialog__name">Dr. Jeffry Weers — Aerosol Expert Advisor</p>
+      <span class="bio-dialog__spacer"></span>
+      <a class="bio-dialog__link" href="https://www.linkedin.com/in/jeffry-weers-1b923b4?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <button class="bio-dialog__close" aria-label="Close">&times;</button>
+    </div>
+    <div class="bio-dialog__content">
+      <p>An accomplished pharmaceutical professional and scientific innovator, Dr. Jeffry
+      Weers has spent his career pushing the frontiers of particle engineering for biomedical
+      applications.</p>
+      <p>For the last 25 years, Weers has focused on the design of formulations and devices for
+      respiratory drug delivery. A prolific inventor, Weers has worked for numerous
+      pharmaceutical corporations to bring innovative drug delivery solutions to market,
+      with nearly 300 issued patents worldwide leading to 7 approved products including
+      TOBI® Podhaler™. He has published over 100 peer reviewed articles and is a well-cited
+      author and international speaker.</p>
+      <p>Weers holds various honors for his work including the 2017 Alexander Fleming Serendipity Award from the
+      London Business School, and Respiratory Drug Delivery’s Charles G. Thiel Award. He serves on the Editorial
+      Board of the Journal of Aerosol Medicine and Pulmonary Drug Delivery and is an Associate Editor for Frontiers
+      in Drug Delivery. Weers is an AAPS Fellow and received his Ph.D. in Chemistry from the University of
+      California, Davis.</p>
+    </div>
+  </dialog>
+
+
+  <!-- Tiny JS to open/close dialogs on desktop -->
+  <script>
+    document.querySelectorAll('.bio-button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-dialog');
+        const dlg = document.getElementById(id);
+        if (dlg) dlg.showModal();
+      });
+    });
+
+
+    document.querySelectorAll('.bio-dialog__close').forEach(btn => {
+      btn.addEventListener('click', () => btn.closest('dialog').close());
+    });
+
+
+    // Close dialog if user clicks the backdrop
+    document.querySelectorAll('dialog.bio-dialog').forEach(dlg => {
+      dlg.addEventListener('click', (e) => {
+        const rect = dlg.getBoundingClientRect();
+        const inDialog = (
+          e.clientX >= rect.left && e.clientX <= rect.right &&
+          e.clientY >= rect.top && e.clientY <= rect.bottom
+        );
+        if (!inDialog) dlg.close();
+      });
+    });
+  </script>
+
+
+  <footer>
+    <p>© 2026 Flurry Powders — All Rights Reserved</p>
+  </footer>
+
+
 </body>
 </html>
